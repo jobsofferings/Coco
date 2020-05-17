@@ -1,2 +1,5 @@
 export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE';
 export type CHANGE_INPUT_VALUE = typeof CHANGE_INPUT_VALUE;
+
+export const CHANGE_ROUTER = 'CHANGE_ROUTER';
+export type CHANGE_ROUTER = typeof CHANGE_ROUTER;

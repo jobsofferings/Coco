@@ -7,8 +7,13 @@ export interface ChangeInputValueEnthusiasm {
     value: string
 }
 
+export interface ChangeRouterEnthusiasm {
+    type: constants.CHANGE_ROUTER;
+    navIndex: string
+}
 
-export type HeadAction = ChangeInputValueEnthusiasm;
+
+export type HeadAction = ChangeInputValueEnthusiasm | ChangeRouterEnthusiasm;
 
 
 export function inChangeInputValue(value: string): ChangeInputValueEnthusiasm {
@@ -17,3 +22,11 @@ export function inChangeInputValue(value: string): ChangeInputValueEnthusiasm {
         value
     }
 }
+
+export function inChangeRouter(navIndex: string): ChangeRouterEnthusiasm {
+    return {
+        type: constants.CHANGE_ROUTER,
+        navIndex
+    }
+}
+

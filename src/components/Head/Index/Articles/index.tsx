@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { StoreState, propsState, articleItem } from '../store/types';
-import * as actions from '../store/actions';
+import { StoreState, propsState, articleItem } from '../../store/types';
+import * as actions from '../../store/actions';
 
 import './index.scss'
-import { SEARCH, LOGO } from '../../../svg';
+import { SEARCH, LOGO } from '../../../../svg';
 
 function Carousel(state: StoreState) {
 

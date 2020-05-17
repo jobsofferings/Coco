@@ -16,7 +16,7 @@ $allBackgroundColor: white;
     box-shadow: 0 0 14px 2px #efefef;
     z-index: 100;
     .nav {
-        width:$allWidth;
+        width: $allWidth;
         height: $navHeight;
         margin: 0 auto;
         .logo {
@@ -30,22 +30,41 @@ $allBackgroundColor: white;
         .list {
             float: left;
             height: $navHeight;
-            li {
-                box-sizing: border-box;
-                float: left;
-                padding: 0 10px;
-                height: $navHeight;
-                font-weight: bold;
-                line-height: $navHeight;
-                transition: all 0.2s ease;
-            }
-            span {
-                color: #666;
-                transition: all 0.2s ease;
-                cursor: pointer;
-            }
-            span:hover {
-                color: #1b1b1b;
+            ul {
+                position: relative;
+                overflow: hidden;
+                li {
+                    box-sizing: border-box;
+                    float: left;
+                    padding: 0 10px;
+                    height: $navHeight;
+                    font-weight: bold;
+                    line-height: $navHeight;
+                    transition: all 0.2s ease;
+                    span {
+                        color: #909090;
+                        transition: all 0.2s ease;
+
+                        cursor: pointer;
+                    }
+                    .nav-active {
+                        color: #302e31;
+                    }
+                    span:hover {
+                        color: #585858;
+                    }
+                }
+                > span {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 52px;
+                    height: 4px;
+                    border-radius: 4px;
+                    background-color: #1b1b1b;
+                    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+                    transition: all 0.4s ease;
+                }
             }
         }
         .search {

@@ -11,8 +11,8 @@ function Archive(state: StoreState) {
   return (
     <div className="content">
       <div className="content-area">
-       这是归档界面
-      </div>
+         这是关于界面
+        </div>
     </div>
   );
 }
@@ -23,7 +23,7 @@ export function mapStateToProps(state: propsState) {
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
   return {
-  }
+  } 
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Archive));

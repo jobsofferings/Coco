@@ -5,10 +5,10 @@ import { StoreState, propsState } from '../store/types';
 import * as actions from '../store/actions';
 
 import './index.scss'
-import Carousel from '../Carousel';
-import Articles from '../Articles';
-import Menu from '../Menu';
-import Category from '../Category';
+import Carousel from './Carousel';
+import Articles from './Articles';
+import Menu from './Menu';
+import Category from './Category';
 
 function Index(state: StoreState) {
 

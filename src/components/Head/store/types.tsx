@@ -1,9 +1,10 @@
 export interface StoreState {
     [x: string]: any;
     inputValue: string,
+    navList: navItem[],
     starArticleList: starArticleItem[],
     ArticlesList: articleItem[],
-    categoryList:string[]
+    categoryList: string[]
 }
 
 
@@ -14,6 +15,10 @@ export interface propsState {
 
 export interface starArticleItem {
     title: string,
+}
+export interface navItem {
+    title: string,
+    href: string,
 }
 
 export interface articleItem {

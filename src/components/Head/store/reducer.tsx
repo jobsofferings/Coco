@@ -1,9 +1,23 @@
 import { HeadAction } from './actions';
 import { StoreState } from './types';
-import { CHANGE_INPUT_VALUE } from './constants';
+import { CHANGE_INPUT_VALUE, CHANGE_ROUTER } from './constants';
 
 const headState: StoreState = {
     inputValue: '',
+    navList: [{
+        title: '首页',
+        href: '/'
+    }, {
+        title: '归档',
+        href: '/archive'
+    }, {
+        title: '关于',
+        href: '/about'
+    }, {
+        title: '留言区',
+        href: '/message'
+    }],
+    navIndex: 0,
     starArticleList: [{
         title: '使用 React hooks 转化 class 的一些思考',
     }, {
@@ -27,7 +41,7 @@ const headState: StoreState = {
     },],
     ArticlesList: [{
         title: '从合并请求角度谈性能优化',
-        headImgSrc: 'https://images.cnblogs.com/cnblogs_com/JobsOfferings/1363202/o_preview.jpg',
+        headImgSrc: 'http://www.jobsofferings.cn:4397/article1.jpg',
         summary: '今年年初在组内做的一个技术分享，主要讲的是：vue cli 3 原理浅析，以及如何能够扩展 vue cli 3 的插件能力？参考了 umi 和 nuxt 的实现原理',
         author: '米卡',
         like: 6,
@@ -37,7 +51,7 @@ const headState: StoreState = {
         timeFormated: 'Nove 9, 2020'
     }, {
         title: '从合并请求角度谈性能优化',
-        headImgSrc: 'https://images.cnblogs.com/cnblogs_com/JobsOfferings/1363202/o_2005161302301.jpg',
+        headImgSrc: 'http://www.jobsofferings.cn:4397/article2.jpg',
         summary: '今年年初在组内做的一个技术分享，主要讲的是：vue cli 3 原理浅析，以及如何能够扩展 vue cli 3 的插件能力？参考了 umi 和 nuxt 的实现原理',
         author: '米卡',
         like: 6,
@@ -86,6 +100,14 @@ const headState: StoreState = {
         timer: 10000000,
         timeFormated: 'Nove 9, 2020'
     }],
+    messageList: [{
+        username: '三毛',
+        imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+        messageContent: '你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+        timer: 10000000,
+        timeFormated: '2020-03-17 14:47',
+        like: 3
+    }],
     categoryList: ['JavaScript', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考']
 }
 
@@ -93,6 +115,8 @@ export default function enthusiasm(state: StoreState = headState, action: HeadAc
     switch (action.type) {
         case CHANGE_INPUT_VALUE:
             return { ...state, inputValue: action.value };
+        case CHANGE_ROUTER:
+            return { ...state, navIndex: action.navIndex };
     }
     return state;
 }

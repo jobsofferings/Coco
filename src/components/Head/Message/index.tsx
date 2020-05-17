@@ -5,13 +5,16 @@ import { StoreState, propsState } from '../store/types';
 import * as actions from '../store/actions';
 
 import './index.scss'
+import MesContent from './MesContent';
+import MesHeader from './MesHeader';
 
 function Archive(state: StoreState) {
 
   return (
     <div className="content">
       <div className="content-area">
-       这是归档界面
+        <MesHeader />
+        <MesContent />
       </div>
     </div>
   );

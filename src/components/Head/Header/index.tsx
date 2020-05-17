@@ -42,27 +42,24 @@ function Header(state: StoreState) {
     }
 
     /**
+     * 路由变化
+     **/
+    const handleChangerouter = (navIndex: number) => {
+        state.changeRouter(navIndex);
+    }
+
+    /**
      * 渲染顶部导航栏
      **/
     const renderNav = () => {
-        const navList = [{
-            title: '首页',
-            href: '/'
-        }, {
-            title: '归档',
-            href: '/archive'
-        }, {
-            title: '关于',
-            href: '/archive'
-        }, {
-            title: '留言区',
-            href: '/archive'
-        }]
+        console.log(state.navIndex);
+        const spanStyle = { left: `${state.navIndex * 52 + 10}px`, width: `${state.navIndex ? (state.navIndex !== 3 ? 32 : 48) : 0}px` };
         return (
             <ul>
-                {navList.map((item, index) => <li key={index}>
-                    <Link to={item.href}><span>{item.title}</span></Link>
+                {state.navList.map((item, index) => <li key={index} onClick={() => { handleChangerouter(index) }}>
+                    <Link to={item.href}><span className={state.navIndex === index ? 'nav-active' : ''}>{item.title}</span></Link>
                 </li>)}
+                <span style={spanStyle}></span>
             </ul>
         );
     }
@@ -95,6 +92,9 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
     return {
         changeInputValue(val: string) {
             dispatch(actions.inChangeInputValue(val));
+        },
+        changeRouter(navIndex: string) {
+            dispatch(actions.inChangeRouter(navIndex));
         },
     }
 }

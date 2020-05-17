@@ -3,13 +3,15 @@ import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { StoreState, propsState } from './store/types';
 import * as actions from './store/actions';
+import { Route, BrowserRouter } from 'react-router-dom';
 
 import './index.scss'
 import Header from './Header/index'
 import Footer from './Footer/index'
 import Index from './Index/index';
 import Archive from './Archive'
-import { Route, BrowserRouter } from 'react-router-dom';
+import Message from './Message';
+import About from './About';
 
 function Head(state: StoreState) {
 
@@ -18,6 +20,8 @@ function Head(state: StoreState) {
       <div className="head">
         <Header />
         <div className="content">
+          <Route exact path="/message" component={Message} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/archive" component={Archive} />
           <Route exact path="/" component={Index} />
         </div>
