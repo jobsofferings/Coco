@@ -1,0 +1,41 @@
+import * as React from 'react';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
+import { StoreState, propsState } from '../store/types';
+import * as actions from '../store/actions';
+
+import './index.scss'
+import { CATEGORY } from '../../../svg';
+
+function Category(state: StoreState) {
+
+    return (
+        <div className="category">
+            <div className="category-header">
+                <CATEGORY />
+                <div className="category-title">组别标签</div>
+            </div>
+            <div className="category-content">
+                {state.categoryList.map((item, index) =>
+                    <div className="category-item" key={index}>
+                        <p>{item}</p>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}
+
+export function mapStateToProps(state: propsState) {
+    return { ...state.head }
+}
+
+export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
+    return {
+        changeInputValue(val: string) {
+            dispatch(actions.inChangeInputValue(val));
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Category));

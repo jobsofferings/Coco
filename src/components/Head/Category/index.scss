@@ -1,0 +1,85 @@
+$allBackgroundColor: white;
+$carouselHeight: 300px;
+$categoryWidth: 330px;
+$categoryTitleHeight: 40px;
+$interval: 20px;
+$scrollbarWidth: 6px;
+.category {
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: $carouselHeight;
+    padding: 15px;
+    border-radius: 3px;
+    background-color: $allBackgroundColor;
+    margin-bottom: $interval;
+    .category-header {
+        box-sizing: border-box;
+        height: $categoryTitleHeight;
+        border-bottom: 1px solid #ddd;
+        svg {
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin-left: 2px;
+            margin-top: 10px;
+            fill: #bdbdbd;
+        }
+        .category-title {
+            float: left;
+            margin-left: 10px;
+            height: $categoryTitleHeight;
+            line-height: $categoryTitleHeight;
+        }
+    }
+    .category-content {
+        margin-top: 10px;
+        max-height: 220px;
+        overflow-y: auto;
+        .category-item {
+            $catogoryItemInterval: 5px;
+            $catogoryItemHeight: 20px;
+            $catogoryItemPadding: 5px;
+            $catogoryItemBorder: 1px;
+            float: left;
+            box-sizing: border-box;
+            margin: $catogoryItemInterval;
+            padding: $catogoryItemPadding $catogoryItemPadding * 3;
+            height: $catogoryItemHeight + 2 * $catogoryItemPadding;
+            border-radius: 5px;
+            border: $catogoryItemBorder solid #ccc;
+            background-color: white;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            p {
+                line-height: $catogoryItemHeight - $catogoryItemBorder * 2;
+                font-size: 14px;
+            }
+        }
+        .category-item:hover {
+            border: 1px solid #888;
+            background-color: #888;
+            color: white;
+        }
+    }
+    .category-content::-webkit-scrollbar {
+        width: $scrollbarWidth;
+        height: $scrollbarWidth;
+    }
+    .category-content::-webkit-scrollbar-track {
+        background: #f6f6f6;
+        border-radius: 2px;
+    }
+    .category-content::-webkit-scrollbar-thumb {
+        background: #aaa;
+        border-radius: 2px;
+    }
+    .category-content::-webkit-scrollbar-thumb:hover {
+        background: #747474;
+    }
+    .category-content::-webkit-scrollbar-corner {
+        background: #f6f6f6;
+    }
+}
