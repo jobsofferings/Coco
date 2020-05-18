@@ -185,7 +185,8 @@ const headState: StoreState = {
         timeFormated: '2020-03-17 14:47',
         like: 3
     }],
-    categoryList: ['JavaScript', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考']
+    categoryList:[]
+    // categoryList: ['JavaScript', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考']
 }
 
 export default function enthusiasm(state: StoreState = headState, action: HeadAction): StoreState {

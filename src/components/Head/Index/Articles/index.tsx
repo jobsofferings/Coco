@@ -19,7 +19,7 @@ function Carousel(state: StoreState) {
             </div>
             <div className="articles-content">
                 <div className="articles-content-img-area">
-                    <img src={item.headImgSrc} alt={item.title} title={item.title}/>
+                    <img src={item.headImgSrc} alt={item.title} title={item.title} />
                 </div>
                 <div className="articles-content-summary-area">
                     <p>{item.summary}</p>
@@ -46,8 +46,7 @@ function Carousel(state: StoreState) {
     return (
         <div className="articles">
             <div className="articles-area">
-                {state.ArticlesList.map((item, index) => renderArticlesList(item, index))}
-                <Empty />
+                {state.ArticlesList.length ? state.ArticlesList.map((item, index) => renderArticlesList(item, index)) : <Empty description="有东西不见了哦"/>}
             </div>
             <div className="pinage">
 

@@ -6,6 +6,7 @@ import * as actions from '../../store/actions';
 
 import './index.scss'
 import { CATEGORY } from '../../../../svg';
+import { Empty } from 'antd';
 
 function Category(state: StoreState) {
 
@@ -16,11 +17,11 @@ function Category(state: StoreState) {
                 <div className="category-title">组别标签</div>
             </div>
             <div className="category-content">
-                {state.categoryList.map((item, index) =>
+                {state.categoryList.length ? state.categoryList.map((item, index) =>
                     <div className="category-item" key={index}>
                         <p>{item}</p>
                     </div>
-                )}
+                ) : <Empty description="有东西不见了哦"/>}
             </div>
         </div>
     );

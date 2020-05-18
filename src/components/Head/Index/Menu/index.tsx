@@ -6,6 +6,7 @@ import * as actions from '../../store/actions';
 
 import './index.scss'
 import { ARTICLE } from '../../../../svg';
+import { Empty } from 'antd';
 
 function Menu(state: StoreState) {
 
@@ -16,12 +17,12 @@ function Menu(state: StoreState) {
                 <div className="menu-title">明星文章</div>
             </div>
             <div className="menu-content">
-                {state.starArticleList.map((item, index) =>
+                {state.starArticleList.length ? state.starArticleList.map((item, index) =>
                     <div className="menu-article" key={index}>
                         <div>{index + 1}</div>
                         <p>{item.title}</p>
                     </div>
-                )}
+                ) : <Empty description="有东西不见了哦"/>}
             </div>
         </div>
     );
