@@ -44,7 +44,7 @@ $allBackgroundColor: white;
                     span {
                         color: #909090;
                         transition: all 0.2s ease;
-
+                        user-select: none;
                         cursor: pointer;
                     }
                     .nav-active {

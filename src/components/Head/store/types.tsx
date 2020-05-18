@@ -30,6 +30,7 @@ export interface messageItem {
     timer: number,
     timeFormated: string,
     like: number,
+    active: boolean
 }
 
 export interface articleItem {

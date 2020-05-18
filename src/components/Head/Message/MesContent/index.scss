@@ -5,6 +5,7 @@ $archiveItemMargin: (100% - $archiveItemWidthScale * 3 - $archiveItemWidthScaleM
 $archiveItemHeaderHeight: 50px;
 $archiveItemContentInterval: 10px;
 $archiveItemFooterHeight: 40px;
+$likeActiveColor:#ed1941;
 $interval: 20px;
 .archive-content-area {
     .archive-content {
@@ -77,6 +78,12 @@ $interval: 20px;
                 }
                 svg:hover {
                     fill: #585858;
+                }
+                .like-active{
+                    fill: $likeActiveColor;
+                }
+                .like-active:hover{
+                    fill: $likeActiveColor;
                 }
             }
             .archive-item-footer-right {

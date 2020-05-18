@@ -40,7 +40,7 @@ function MesContent(state: StoreState) {
                             </div>
                             <div className="archive-item-footer">
                                 <div className="archive-item-footer-left">
-                                    <LIKE onClick={handleLike} />
+                                    <LIKE className={item.active ? 'like-active' : ''} onClick={handleLike} />
                                     <p>{item.like}</p>
                                 </div>
                                 <div className="archive-item-footer-right">

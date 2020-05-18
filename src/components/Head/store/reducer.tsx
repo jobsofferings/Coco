@@ -106,86 +106,98 @@ const headState: StoreState = {
         messageContent: '你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
-    },{
+        like: 3,
+        active: true
+    }, {
         username: '三毛',
         imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
         messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
         timer: 10000000,
         timeFormated: '2020-03-17 14:47',
-        like: 3
+        like: 3,
+        active: true
     }],
-    categoryList:[]
+    categoryList: []
     // categoryList: ['JavaScript', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考']
 }
 
