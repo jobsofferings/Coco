@@ -6,9 +6,11 @@ import * as actions from '../store/actions';
 
 import './index.scss'
 import { LOGO, CLOSE, SEARCH } from '../../../svg'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 function Header(state: StoreState) {
+
+    const pathname = state.history.location.pathname;
 
     /**
      * inputValue绑定函数
@@ -56,13 +58,24 @@ function Header(state: StoreState) {
         const spanStyle = { left: `${state.navIndex * 52 + 10}px`, width: `${state.navIndex ? (state.navIndex !== 3 ? 32 : 48) : 0}px` };
         return (
             <ul>
-                {state.navList.map((item, index) => <li key={index} onClick={() => { handleChangerouter(index) }}>
-                    <Link to={item.href}><span className={state.navIndex === index ? 'nav-active' : ''}>{item.title}</span></Link>
-                </li>)}
+                {state.navList.map((item, index) => <Link to={item.href} key={index}>
+                    <li onClick={() => { handleChangerouter(index) }}>
+                        <span className={state.navIndex === index ? 'nav-active' : ''}>{item.title}</span>
+                    </li>
+                </Link>)}
                 <span style={spanStyle}></span>
             </ul>
         );
     }
+
+    React.useEffect(() => {
+        state.navList.map((item, index) => {
+            if (item.href === pathname) {
+                state.changeRouter(index);
+            }
+        })
+    }, [])
+
     return (
         <div className="header">
             <div className="nav">
@@ -99,4 +112,4 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Header));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(React.memo(Header)));

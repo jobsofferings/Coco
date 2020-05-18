@@ -11,11 +11,9 @@ import MesHeader from './MesHeader';
 function Archive(state: StoreState) {
 
   return (
-    <div className="content">
-      <div className="content-area">
-        <MesHeader />
-        <MesContent />
-      </div>
+    <div className="content-area" key="four">
+      <MesHeader />
+      <MesContent />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import * as actions from '../../store/actions';
 
 import './index.scss'
 import { SEARCH, LOGO } from '../../../../svg';
+import { Empty } from 'antd';
 
 function Carousel(state: StoreState) {
 
@@ -46,6 +47,7 @@ function Carousel(state: StoreState) {
         <div className="articles">
             <div className="articles-area">
                 {state.ArticlesList.map((item, index) => renderArticlesList(item, index))}
+                <Empty />
             </div>
             <div className="pinage">
 

@@ -15,15 +15,33 @@ $interval: 20px;
         overflow: hidden;
         margin: 0 auto;
     }
-    .content-area-left{
+    .content-area-left {
         float: left;
         box-sizing: border-box;
         width: $leftWidth;
         margin-right: $interval;
     }
-    .content-area-right{
+    .content-area-right {
         float: left;
         box-sizing: border-box;
         width: $rightWidth;
     }
+}
+
+.sample-enter {
+    opacity: 0.01;
+}
+
+.sample-enter.sample-enter-active {
+    opacity: 1;
+    transition: opacity 5000ms ease-in;
+}
+
+.sample-leave {
+    opacity: 1;
+}
+
+.sample-leave.sample-leave-active {
+    opacity: 0.01;
+    transition: opacity 2000ms ease-in;
 }

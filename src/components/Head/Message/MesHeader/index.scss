@@ -55,10 +55,14 @@ $interval: 20px;
                 background: linear-gradient(135deg, #f21368, #e80505);
                 border-radius: 2px;
                 transition: all 0.3s ease;
+                outline: none;
                 cursor: pointer;
             }
-            button:hover{
-                box-shadow: 0 4px 25px rgba(232,5,5,.4);
+            button:hover {
+                box-shadow: 0 4px 25px rgba(232, 5, 5, 0.4);
+            }
+            button:focus {
+                outline: none;
             }
         }
         .archive-header-num {

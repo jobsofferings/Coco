@@ -3,15 +3,53 @@ import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { StoreState, propsState } from '../../store/types';
 import * as actions from '../../store/actions';
+import Masonry from 'react-masonry-component';
+import { Tooltip, message } from 'antd';
 
 import './index.scss'
+import { LIKE } from '../../../../svg';
 
 function MesContent(state: StoreState) {
+
+    console.log(state.messageList);
+
+    const handleLike = () => {
+        message.info('当前功能未开发');
+    }
 
     return (
         <div className="archive-content-area">
             <div className="archive-content">
-
+                <Masonry
+                    elementType={'ul'}
+                    options={{ transitionDuration: 5 }}
+                >
+                    {state.messageList.map((item, index) => {
+                        return <li key={index} className="archive-item">
+                            {/* 注意，这里允许点击跳转友链 */}
+                            <div className="archive-item-header">
+                                <div>
+                                    <img src={item.imgSrc} alt="" />
+                                </div>
+                                <Tooltip title='去TA的主页看看'>
+                                    <p>{item.username}</p>
+                                </Tooltip >
+                            </div>
+                            <div className="archive-item-content">
+                                <p>{item.messageContent}</p>
+                            </div>
+                            <div className="archive-item-footer">
+                                <div className="archive-item-footer-left">
+                                    <LIKE onClick={handleLike} />
+                                    <p>{item.like}</p>
+                                </div>
+                                <div className="archive-item-footer-right">
+                                    <p>{item.timeFormated}</p>
+                                </div>
+                            </div>
+                        </li>
+                    })}
+                </Masonry>
             </div>
         </div>
     );

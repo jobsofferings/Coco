@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { StoreState, propsState } from './store/types';
 import * as actions from './store/actions';
 import { Route, BrowserRouter } from 'react-router-dom';
+// import ReactCSSTransitionGroup  from 'react-transition-group' 
+import TransitionGroup from 'react-addons-css-transition-group';
 
 import './index.scss'
 import Header from './Header/index'
@@ -14,16 +16,40 @@ import Message from './Message';
 import About from './About';
 
 function Head(state: StoreState) {
+  
+  const router = [
+    {
+      path: '/',
+      component: Index
+    },
+    {
+      path: '/archive',
+      component: Archive
+    },
+    {
+      path: '/about',
+      component: About
+    },
+    {
+      path: '/message',
+      component: Message
+    },
+  ]
 
   return (
     <BrowserRouter >
       <div className="head">
         <Header />
         <div className="content">
-          <Route exact path="/message" component={Message} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/archive" component={Archive} />
-          <Route exact path="/" component={Index} />
+          <TransitionGroup transitionEnter={true}
+            transitionLeave={true}
+            transitionEnterTimeout={2500}
+            transitionLeaveTimeout={1500}
+            transitionName="sample">
+            {router.map((item, index) => {
+              return <Route key={index} exact path={item.path} component={item.component} />
+            })}
+          </TransitionGroup>
         </div>
         <Footer />
       </div>

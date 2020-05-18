@@ -9,10 +9,35 @@ import './index.scss'
 function Archive(state: StoreState) {
 
   return (
-    <div className="content">
-      <div className="content-area">
-       这是归档界面
-      </div>
+    <div className="content-area" key="two">
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
+      这是归档界面
     </div>
   );
 }

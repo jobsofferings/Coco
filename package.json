@@ -11,6 +11,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.8",
+    "@types/react-transition-group": "^4.2.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -41,9 +42,13 @@
     ]
   },
   "devDependencies": {
+    "@types/react-addons-css-transition-group": "^15.0.5",
+    "@types/react-addons-transition-group": "^15.0.4",
     "@types/react-router-dom": "^5.1.5",
     "antd": "^4.2.2",
     "node-sass": "^4.14.1",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-masonry-component": "^6.2.1",
     "react-router-dom": "^5.2.0"
   }
 }

@@ -2,6 +2,7 @@ export interface StoreState {
     [x: string]: any;
     inputValue: string,
     navList: navItem[],
+    messageList: messageItem[],
     starArticleList: starArticleItem[],
     ArticlesList: articleItem[],
     categoryList: string[]
@@ -16,9 +17,19 @@ export interface propsState {
 export interface starArticleItem {
     title: string,
 }
+
 export interface navItem {
     title: string,
     href: string,
+}
+
+export interface messageItem {
+    username: string,
+    imgSrc: string,
+    messageContent: string,
+    timer: number,
+    timeFormated: string,
+    like: number,
 }
 
 export interface articleItem {

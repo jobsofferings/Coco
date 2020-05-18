@@ -13,7 +13,7 @@ import Category from './Category';
 function Index(state: StoreState) {
 
     return (
-        <div className="content-area">
+        <div className="content-area" key="one">
             <div className="content-area-left">
                 <Carousel />
                 <Articles />
