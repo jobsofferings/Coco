@@ -11,8 +11,6 @@ import { LIKE } from '../../../../svg';
 
 function MesContent(state: StoreState) {
 
-    console.log(state.messageList);
-
     const handleLike = () => {
         message.info('当前功能未开发');
     }
@@ -56,7 +54,7 @@ function MesContent(state: StoreState) {
 }
 
 export function mapStateToProps(state: propsState) {
-    return { ...state.head }
+    return { messageList: state.head.messageList }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {

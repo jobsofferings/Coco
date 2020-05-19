@@ -1,15 +1,10 @@
 import * as React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { StoreState, propsState } from '../store/types';
-import * as actions from '../store/actions';
-import { Map } from 'react-amap';
 
 import './index.scss'
 import AboutHeader from './AboutHeader';
 import AboutContent from './AboutContent';
 
-function Archive(state: StoreState) {
+function Archive() {
 
   const AMAP_KEY = 'a77ae728df8f8c954d77c202ae0c0a94';
 
@@ -24,13 +19,4 @@ function Archive(state: StoreState) {
   );
 }
 
-export function mapStateToProps(state: propsState) {
-  return { ...state.head }
-}
-
-export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
-  return {
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Archive));
+export default Archive;

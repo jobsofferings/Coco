@@ -68,7 +68,7 @@ function Carousel(state: StoreState) {
 }
 
 export function mapStateToProps(state: propsState) {
-    return { ...state.head }
+    return {  }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {

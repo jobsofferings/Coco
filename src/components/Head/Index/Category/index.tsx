@@ -28,7 +28,7 @@ function Category(state: StoreState) {
 }
 
 export function mapStateToProps(state: propsState) {
-    return { ...state.head }
+    return { categoryList:state.head.categoryList }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {

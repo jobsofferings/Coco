@@ -98,7 +98,11 @@ function Header(state: StoreState) {
 }
 
 export function mapStateToProps(state: propsState) {
-    return { ...state.head }
+    return {
+        navIndex: state.head.navIndex,
+        navList: state.head.navList,
+        inputValue: state.head.inputValue,
+    }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {

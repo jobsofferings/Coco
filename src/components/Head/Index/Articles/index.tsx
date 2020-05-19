@@ -46,7 +46,7 @@ function Carousel(state: StoreState) {
     return (
         <div className="articles">
             <div className="articles-area">
-                {state.ArticlesList.length ? state.ArticlesList.map((item, index) => renderArticlesList(item, index)) : <Empty description="有东西不见了哦"/>}
+                {state.ArticlesList.length ? state.ArticlesList.map((item, index) => renderArticlesList(item, index)) : <Empty description="有东西不见了哦" />}
             </div>
             <div className="pinage">
 
@@ -56,7 +56,7 @@ function Carousel(state: StoreState) {
 }
 
 export function mapStateToProps(state: propsState) {
-    return { ...state.head }
+    return { ArticlesList: state.head.ArticlesList }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {

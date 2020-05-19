@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { StoreState, propsState } from '../../store/types';
 import * as actions from '../../store/actions';
 import { Map, Marker } from 'react-amap';
+import { GithubOutlined } from '@ant-design/icons';
 
 import './index.scss'
-import { ME, TOOL, POSITION, COMPANY, LIKE } from '../../../../svg';
+import { ME, TOOL, POSITION, COMPANY, LIKE, GITHUB, JUE_JIN } from '../../../../svg';
 
 function AboutContent(state: StoreState) {
 
@@ -55,9 +56,17 @@ function AboutContent(state: StoreState) {
                 </div>
             </div>
             <div className="about-content-right">
-                <div className="about-my-Contacts">
-                    <div className="Contacts-header">
+                <div className="about-my-contacts">
+                    <div className="contacts-header">
                         <p>Contacts</p>
+                    </div>
+                    <div className="contacts-content">
+                        {/* <div>
+                            <GithubOutlined />
+                        </div>
+                        <div>
+                            <JUE_JIN />
+                        </div> */}
                     </div>
                 </div>
                 <div className="about-my-posi">
@@ -74,7 +83,7 @@ function AboutContent(state: StoreState) {
 }
 
 export function mapStateToProps(state: propsState) {
-    return { ...state.head }
+    return {  }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {

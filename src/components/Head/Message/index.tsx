@@ -18,13 +18,4 @@ function Archive(state: StoreState) {
   );
 }
 
-export function mapStateToProps(state: propsState) {
-  return { ...state.head }
-}
-
-export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
-  return {
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Archive));
+export default Archive;

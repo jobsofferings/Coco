@@ -29,7 +29,7 @@ function Menu(state: StoreState) {
 }
 
 export function mapStateToProps(state: propsState) {
-    return { ...state.head }
+    return { starArticleList:state.head.starArticleList }
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
