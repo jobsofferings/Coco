@@ -14,6 +14,7 @@ import Index from './Index/index';
 import Archive from './Archive'
 import Message from './Message';
 import About from './About';
+import Unknow from './Unknow';
 
 function Head(state: StoreState) {
   
@@ -33,6 +34,10 @@ function Head(state: StoreState) {
     {
       path: '/message',
       component: Message
+    },
+    {
+      path: '/*',
+      component: Unknow
     },
   ]
 

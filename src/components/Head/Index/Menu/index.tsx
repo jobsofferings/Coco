@@ -17,7 +17,7 @@ function Menu(state: StoreState) {
                 <div className="menu-title">明星文章</div>
             </div>
             <div className="menu-content">
-                {state.starArticleList.length ? state.starArticleList.map((item, index) =>
+                {state.starArticleList.length ? state.starArticleList.splice(0, 5).map((item, index) =>
                     <div className="menu-article" key={index}>
                         <div>{index + 1}</div>
                         <p>{item.title}</p>
