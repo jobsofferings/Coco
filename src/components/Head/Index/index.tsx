@@ -30,8 +30,4 @@ function Index() {
     );
 }
 
-<<<<<<< HEAD
 export default Index;
-=======
-export default React.memo(Index);
->>>>>>> 5d17386718bc3a2ef30fc71908e984451f46fa18
