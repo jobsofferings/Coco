@@ -1,0 +1,106 @@
+$allBackColor: #ededed;
+$contentBackColor: white;
+$contentWidth: 800px;
+$contentHeight: 500px;
+$allTransition: all 0.6s;
+.login {
+    width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+    background-color: $allBackColor;
+    .login-content {
+        width: $contentWidth;
+        height: $contentHeight;
+        margin: 20px auto;
+        background-color: $contentBackColor;
+        .login-content-form-area {
+            position: relative;
+            width: $contentWidth;
+            height: 100%;
+            .login-content-img-mask {
+                position: absolute;
+                left: 0px;
+                top: 0;
+                width: $contentWidth * 0.3;
+                height: 100%;
+                transition: $allTransition;
+                overflow: hidden;
+                .login-content-img-area {
+                    position: absolute;
+                    left: 0px;
+                    top: 0;
+                    width: $contentWidth;
+                    height: 100%;
+                    background-image: url("https://www.17sucai.com/preview/1424582/2019-11-22/cc/images/bg.jpg");
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    filter: opacity(75%);
+                    transition: $allTransition;
+                    > div:first-child {
+                        width: $contentWidth * 0.3;
+                        margin: 50px 0;
+                        transition: $allTransition;
+                        p:first-child {
+                            margin: 15px 0;
+                            font-size: 26px;
+                            text-align: center;
+                            font-weight: normal;
+                            color: $contentBackColor;
+                            transition: $allTransition;
+                        }
+                        p:last-child {
+                            font-size: 14px;
+                            line-height: 1.5;
+                            text-align: center;
+                            font-weight: normal;
+                            color: $contentBackColor;
+                            transition: $allTransition;
+                        }
+                    }
+                    > div:last-child {
+                        width: $contentWidth * 0.3;
+                        margin-top: 250px;
+                        transition: $allTransition;
+                        button {
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: $contentWidth * 0.15;
+                            height: $contentWidth * 0.05;
+                            border-radius: $contentWidth * 0.05;
+                            border: 1px solid $contentBackColor;
+                            margin: 0 auto;
+                            background-color: transparent;
+                            color: $contentBackColor;
+                            outline: none;
+                            transition: $allTransition;
+                            cursor: pointer;
+                            p {
+                                height: $contentWidth * 0.05 - 4px;
+                                line-height: $contentWidth * 0.05 - 4px;
+                                transition: $allTransition;
+                            }
+                        }
+                    }
+                }
+            }
+            .login-content-img-mask-active {
+                left: $contentWidth * 0.7;
+                .login-content-img-area {
+                    left: $contentWidth * -0.7;
+                    > div:first-child {
+                        margin-left: $contentWidth * 0.7;
+                    }
+                    > div:last-child {
+                        margin-left: $contentWidth * 0.7;
+                        button {
+                            p {
+                                transform: translateY($contentWidth * -0.05 + 4px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
