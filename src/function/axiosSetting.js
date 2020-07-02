@@ -12,7 +12,7 @@ const codeMessage = {
     202: '一个请求已经进入后台排队（异步任务）。',
     204: '删除数据成功。',
     400: '发出的请求有错误，服务器没有进行新建或修改数据的操作。',
-    401: '用户没有权限（令牌、用户名、密码错误）。',
+    401: '用户没有权限（令牌、用户名、密码错误）。', // 可以跳转login
     403: '用户得到授权，但是访问是被禁止的。',
     404: '发出的请求针对的是不存在的记录，服务器没有进行操作。',
     406: '请求的格式不可得。',
@@ -42,10 +42,10 @@ axios.interceptors.request.use(
         //     dispatch(routerRedux.replace('/user/login')) // 跳转到登录页
         // }
         // return config
+        config.timeout = 30000;
         return config; 
     },
     error => {
-        // Do something with request error
         message.info('加载超时');
         Promise.reject(error)
     }
@@ -106,6 +106,17 @@ axios.interceptors.response.use(
         // const { response: { status, statusText, data: { msg = '服务器发生错误' } } } = error
         const { response } = error
         console.log(response);
+
+        // if (error.response) {
+		// 	if (error.response.status === 401) {
+		// 		// 这种情况一般调到登录页
+		// 	} else if (error.response.status === 403) {
+		// 		// 提示无权限等
+		// 	} else {
+		// 		// 其他错误处理
+		// 	}
+        // }
+        
         // const { dispatch } = store
         // const text = codeMessage[status] || statusText || msg
 

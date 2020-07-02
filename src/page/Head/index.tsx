@@ -36,7 +36,7 @@ function Head(state: StoreState) {
       component: Message
     },
     {
-      path: '/*',
+      path: '/404',
       component: Unknow
     },
   ]
