@@ -87,7 +87,7 @@ function Header(state: StoreState) {
                 </div>
                 <div className="search">
                     <CLOSE className={`search-close ${!state.inputValue.length ? 'hide' : ''}`} onClick={handleClearInput} />
-                    <input value={state.inputValue} onKeyPress={handlePress} onChange={handelChange} type="text" placeholder="搜索文章1234567891011121314151617" />
+                    <input value={state.inputValue} onKeyPress={handlePress} onChange={handelChange} type="text" placeholder="搜索文章123456789101112131415161718" />
                     <div className="search-icon" onClick={handleSearch}>
                         <SEARCH className="icon" />
                     </div>
