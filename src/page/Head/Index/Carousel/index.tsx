@@ -14,7 +14,7 @@ interface ChangeCarousel {
 function Carousel(state: StoreState) {
     const [trans, setTrans] = React.useState(0);
     const [interval, setInterval] = React.useState(0);
-    const carouselList = ['React1', 'Vue1', 'Ang1', 'React2', 'Vue2', 'Ang2']
+    const carouselList = ['以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中']
 
     /**
      * 上一个轮播
