@@ -10,7 +10,7 @@ function Index() {
 
     React.useEffect(() => {
         window.addEventListener('scroll', (e) => {
-            console.log(e);
+            // console.log(e);
         })
     }, [])
 

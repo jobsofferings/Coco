@@ -54,7 +54,6 @@ function Header(state: StoreState) {
      * 渲染顶部导航栏
      **/
     const renderNav = () => {
-        console.log(state.navIndex);
         const spanStyle = { left: `${state.navIndex * 52 + 10}px`, width: `${state.navIndex ? (state.navIndex !== 3 ? 32 : 48) : 0}px` };
         return (
             <ul>

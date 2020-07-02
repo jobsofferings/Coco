@@ -27,7 +27,7 @@ function LoginSign(state: StoreState) {
     }
 
     const handleLogin = (val: Store) => {
-        console.log(val);
+        // console.log(val);
     }
 
     return (
