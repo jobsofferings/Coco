@@ -62,7 +62,7 @@ function LoginSign(state: StoreState) {
                                     登录
                                 </Button>
                                 <div className='login-btn' onClick={() => {
-                                    post('http://127.0.0.1', { a: 1 }, {});
+                                    // post('http://127.0.0.1', { a: 1 }, {});
                                 }}>登录</div>
                             </Form>
                         </div>
