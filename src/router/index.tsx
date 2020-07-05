@@ -11,9 +11,9 @@ import Unknow from '../page/Head/Unknow';
 const BasicRoute = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path="/login" component={LoginSign} />
-            <Route exact path="/" component={Head} />
-            <Route exact path="/404" component={Unknow} />
+            <Route path="/login" component={LoginSign} />
+            <Route path="/" component={Head} />
+            <Route path="/*" component={Unknow} />
         </Switch>
     </BrowserRouter>
 );
