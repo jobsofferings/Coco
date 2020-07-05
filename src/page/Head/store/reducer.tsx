@@ -197,8 +197,8 @@ const headState: StoreState = {
         like: 3,
         active: true
     }],
-    categoryList: []
-    // categoryList: ['JavaScript', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考', 'Node', 'CSS', 'React', 'Vue', '思考']
+    // categoryList: []
+    categoryList: ['JavaScript', 'Node', 'CSS', 'React', 'Vue', '思考']
 }
 
 export default function enthusiasm(state: StoreState = headState, action: HeadAction): StoreState {
