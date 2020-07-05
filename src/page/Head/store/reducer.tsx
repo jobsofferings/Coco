@@ -40,9 +40,9 @@ const headState: StoreState = {
         title: 'axios的Get和Post方法封装及Node后端接收数据'
     },],
     ArticlesList: [{
-        title: '从合并请求角度谈性能优化',
+        title: '使用 React hooks 转化 class 的一些思考',
         headImgSrc: 'http://www.jobsofferings.cn:4397/article1.jpg',
-        summary: '今年年初在组内做的一个技术分享，主要讲的是：vue cli 3 原理浅析，以及如何能够扩展 vue cli 3 的插件能力？参考了 umi 和 nuxt 的实现原理',
+        summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
         author: '米卡',
         like: 6,
         read: 100,
@@ -50,9 +50,9 @@ const headState: StoreState = {
         timer: 10000000,
         timeFormated: 'Nove 9, 2020'
     }, {
-        title: '从合并请求角度谈性能优化',
+        title: '使用 React hooks 转化 class 的一些思考',
         headImgSrc: 'http://www.jobsofferings.cn:4397/article2.jpg',
-        summary: '今年年初在组内做的一个技术分享，主要讲的是：vue cli 3 原理浅析，以及如何能够扩展 vue cli 3 的插件能力？参考了 umi 和 nuxt 的实现原理',
+        summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
         author: '米卡',
         like: 6,
         read: 100,
@@ -60,9 +60,9 @@ const headState: StoreState = {
         timer: 10000000,
         timeFormated: 'Nove 9, 2020'
     }, {
-        title: '从合并请求角度谈性能优化',
+        title: '使用 React hooks 转化 class 的一些思考',
         headImgSrc: 'https://static.jooger.me/img/source/20200404/vue-cli3_1585967248562.jpg?x-oss-process=style/watermark',
-        summary: '今年年初在组内做的一个技术分享，主要讲的是：vue cli 3 原理浅析，以及如何能够扩展 vue cli 3 的插件能力？参考了 umi 和 nuxt 的实现原理',
+        summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
         author: '米卡',
         like: 6,
         read: 100,
@@ -70,9 +70,9 @@ const headState: StoreState = {
         timer: 10000000,
         timeFormated: 'Nove 9, 2020'
     }, {
-        title: '从合并请求角度谈性能优化',
+        title: '使用 React hooks 转化 class 的一些思考',
         headImgSrc: 'https://static.jooger.me/img/source/20200404/vue-cli3_1585967248562.jpg?x-oss-process=style/watermark',
-        summary: '今年年初在组内做的一个技术分享，主要讲的是：vue cli 3 原理浅析，以及如何能够扩展 vue cli 3 的插件能力？参考了 umi 和 nuxt 的实现原理',
+        summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
         author: '米卡',
         like: 6,
         read: 100,
@@ -80,9 +80,9 @@ const headState: StoreState = {
         timer: 10000000,
         timeFormated: 'Nove 9, 2020'
     }, {
-        title: '从合并请求角度谈性能优化',
+        title: '使用 React hooks 转化 class 的一些思考',
         headImgSrc: 'https://static.jooger.me/img/source/20200404/vue-cli3_1585967248562.jpg?x-oss-process=style/watermark',
-        summary: '今年年初在组内做的一个技术分享，主要讲的是：vue cli 3 原理浅析，以及如何能够扩展 vue cli 3 的插件能力？参考了 umi 和 nuxt 的实现原理',
+        summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
         author: '米卡',
         like: 6,
         read: 100,
@@ -90,9 +90,9 @@ const headState: StoreState = {
         timer: 10000000,
         timeFormated: 'Nove 9, 2020'
     }, {
-        title: '从合并请求角度谈性能优化',
+        title: '使用 React hooks 转化 class 的一些思考',
         headImgSrc: 'https://static.jooger.me/img/source/20200404/vue-cli3_1585967248562.jpg?x-oss-process=style/watermark',
-        summary: '今年年初在组内做的一个技术分享，主要讲的是：vue cli 3 原理浅析，以及如何能够扩展 vue cli 3 的插件能力？参考了 umi 和 nuxt 的实现原理',
+        summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
         author: '米卡',
         like: 6,
         read: 100,

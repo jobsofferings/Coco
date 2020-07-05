@@ -3,7 +3,6 @@ import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { StoreState, propsState } from '../../store/types';
 import * as actions from '../../store/actions';
-import Masonry from 'react-masonry-component';
 import { Tooltip, message } from 'antd';
 
 import './index.scss'
@@ -18,12 +17,9 @@ function MesContent(state: StoreState) {
     return (
         <div className="archive-content-area">
             <div className="archive-content">
-                <Masonry
-                    elementType={'ul'}
-                    options={{ transitionDuration: 5 }}
-                >
+                <div className="masonry">
                     {state.messageList.map((item, index) => {
-                        return <li key={index} className="archive-item">
+                        return <li key={index} className="archive-item item">
                             {/* 注意，这里允许点击跳转友链 */}
                             <div className="archive-item-header">
                                 <div>
@@ -47,7 +43,7 @@ function MesContent(state: StoreState) {
                             </div>
                         </li>
                     })}
-                </Masonry>
+                </div>
             </div>
         </div>
     );
