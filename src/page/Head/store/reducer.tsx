@@ -198,7 +198,62 @@ const headState: StoreState = {
         active: true
     }],
     // categoryList: []
-    categoryList: ['JavaScript', 'Node', 'CSS', 'React', 'Vue', '思考']
+    categoryList: ['JavaScript', 'Node', 'CSS', 'React', 'Vue', '思考'],
+    /**
+     * 这边应该是我后端为一个对象数组，time是时间戳形式，然后这边转成此格式
+     **/
+    timelineData: [
+        {
+            year: 2020,
+            monthList: [
+                {
+                    month: 3,
+                    dayList: [
+                        {
+                            day: 4,
+                            link: 'www.baidu.com',
+                            title: '使用 React hooks 转化 class 的一些思考'
+                        },
+                        {
+                            day: 11,
+                            link: 'www.baidu.com',
+                            title: '使用 React hooks 转化 class 的一些思考'
+                        },
+                        {
+                            day: 23,
+                            link: 'www.baidu.com',
+                            title: '使用 React hooks 转化 class 的一些思考'
+                        },
+                    ]
+                },
+                {
+                    month: 4,
+                    dayList: [
+                        {
+                            day: 7,
+                            link: 'www.baidu.com',
+                            title: '使用 React hooks 转化 class 的一些思考'
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            year: 2021,
+            monthList: [
+                {
+                    month: 5,
+                    dayList: [
+                        {
+                            day: 9,
+                            link: 'www.baidu.com',
+                            title: '使用 React hooks 转化 class 的一些思考'
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }
 
 export default function enthusiasm(state: StoreState = headState, action: HeadAction): StoreState {

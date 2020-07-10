@@ -5,7 +5,8 @@ export interface StoreState {
     messageList: messageItem[],
     starArticleList: starArticleItem[],
     ArticlesList: articleItem[],
-    categoryList: string[]
+    categoryList: string[],
+    timelineData: timelineDataParams,
 }
 
 
@@ -43,4 +44,22 @@ export interface articleItem {
     comment: number,
     timer: number,
     timeFormated: string,
+}
+
+export type timelineDataParams = yearListParams[]
+
+export interface yearListParams {
+	year: number,
+	monthList: monthListParams[]
+}
+
+export interface monthListParams {
+	month: number,
+	dayList: dayListParams[]
+
+}
+export interface dayListParams {
+	day: number,
+	link: string,
+	title: string,
 }

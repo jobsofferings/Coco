@@ -56,6 +56,7 @@ $scrollbarWidth: 6px;
             p {
                 line-height: $catogoryItemHeight - $catogoryItemBorder * 2;
                 font-size: 14px;
+                user-select: none;
             }
         }
         .category-item:hover {

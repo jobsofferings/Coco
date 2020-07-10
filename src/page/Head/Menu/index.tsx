@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { StoreState, propsState } from '../../store/types';
-import * as actions from '../../store/actions';
+import { StoreState, propsState } from '../store/types';
+import * as actions from '../store/actions';
 
 import './index.scss'
-import { ARTICLE } from '../../../../svg';
+import { ARTICLE } from '../../../svg';
 import { Empty } from 'antd';
 
 function Menu(state: StoreState) {

@@ -5,7 +5,8 @@ import { StoreState, propsState } from '../store/types';
 import * as actions from '../store/actions';
 
 import './index.scss'
-import { LOGO, CLOSE, SEARCH } from '../../../svg'
+import { LOGO, SEARCH } from '../../../svg'
+import { CLOSE } from '../../../svg_second'
 import { Link, withRouter } from 'react-router-dom';
 
 function Header(state: StoreState) {

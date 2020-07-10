@@ -3,8 +3,8 @@ import * as React from 'react';
 import './index.scss'
 import Carousel from './Carousel';
 import Articles from './Articles';
-import Menu from './Menu';
-import Category from './Category';
+import Menu from '../Menu';
+import Category from '../Category';
 
 function Index() {
 
