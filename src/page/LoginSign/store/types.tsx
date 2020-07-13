@@ -3,8 +3,11 @@ export interface StoreState {
     inputValue: string,
 }
 
-
-
 export interface propsState {
     loginSign: StoreState
+}
+
+export interface LoginDateProps {
+    username: string,
+    password: string
 }

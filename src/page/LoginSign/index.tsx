@@ -8,6 +8,7 @@ import { post } from '../../function/server';
 
 import './index.scss'
 import { Store } from 'antd/lib/form/interface';
+import { loginApi } from '../../function/api';
 const layout = {
     labelCol: { span: 4 },
     wrapperCol: { span: 20 },
@@ -19,7 +20,7 @@ const tailLayout = {
 function LoginSign(state: StoreState) {
 
     const [form] = Form.useForm();
-    const btn = React.useRef();
+    let loginBtn: HTMLElement | null;
     const [isLogin, setIsLogin] = React.useState(true)
 
     const handleChangeLS = () => {
@@ -27,7 +28,10 @@ function LoginSign(state: StoreState) {
     }
 
     const handleLogin = (val: Store) => {
-        // console.log(val);
+        loginApi(val).then((res: any) => {
+            console.log(res);
+        })
+        console.log(val);
     }
 
     return (
@@ -58,10 +62,11 @@ function LoginSign(state: StoreState) {
                                 <Form.Item name='password' label='密码' rules={[{ required: true, message: '请输入密码' }]}>
                                     <Input type="password" />
                                 </Form.Item>
-                                <Button style={{ display: 'none' }} type="primary" htmlType="submit">
+                                <Button ref={ref => { loginBtn = ref; }} style={{ display: 'none' }} type="primary" htmlType="submit">
                                     登录
                                 </Button>
                                 <div className='login-btn' onClick={() => {
+                                    loginBtn?.click();
                                     // post('http://127.0.0.1', { a: 1 }, {});
                                 }}>登录</div>
                             </Form>
