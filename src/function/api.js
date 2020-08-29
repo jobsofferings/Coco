@@ -17,3 +17,5 @@ import {post} from './server'
 
 // 登陆请求
 export const loginApi = p => post('/loginApi', p);
+// 测试cookie是否有效
+export const testApi = p => post('/testApi', p);
