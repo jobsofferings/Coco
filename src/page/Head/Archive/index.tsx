@@ -1,13 +1,12 @@
-import * as React from 'react';
+import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { StoreState, propsState, timelineDataParams } from '../store/types';
+import { StoreState, propsState } from '../store/types';
 import * as actions from '../store/actions';
-
-import './index.scss'
 import Category from '../Category';
 import Menu from '../Menu';
 import TimeArchive from './TimeArchive';
+import './index.scss'
 
 function Archive(state: StoreState) {
   const { timelineData } = state;

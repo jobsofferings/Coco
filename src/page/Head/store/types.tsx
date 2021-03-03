@@ -9,8 +9,6 @@ export interface StoreState {
     timelineData: timelineDataParams,
 }
 
-
-
 export interface propsState {
     head: StoreState
 }

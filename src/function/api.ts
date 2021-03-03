@@ -1,4 +1,4 @@
-import {post} from './server'
+import { post } from './server'
 // export const checkedLogin = p => http.post('/checkedLogin', p);相当于
 // export const checkedLogin = (p) => http.post('/checkedLogin', p);
 
@@ -16,6 +16,6 @@ import {post} from './server'
 // export const getArticlesByStrApi = p => http.post('/getArticlesByStr', p);
 
 // 登陆请求
-export const loginApi = p => post('/loginApi', p);
+export const loginApi = (p: any) => post('/loginApi', p, {});
 // 测试cookie是否有效
-export const testApi = p => post('/testApi', p);
+export const testApi = (p: any) => post('/testApi', p, {});

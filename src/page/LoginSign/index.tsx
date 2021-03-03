@@ -1,20 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { Input, Form, Button } from 'antd';
 import { StoreState, propsState } from './store/types';
 import * as actions from './store/actions';
-import { post } from '../../function/server';
-
-import './index.scss'
 import { Store } from 'antd/lib/form/interface';
 import { loginApi } from '../../function/api';
+import './index.scss'
+
 const layout = {
     labelCol: { span: 4 },
     wrapperCol: { span: 20 },
-};
-const tailLayout = {
-    wrapperCol: { offset: 10 },
 };
 
 function LoginSign(state: StoreState) {

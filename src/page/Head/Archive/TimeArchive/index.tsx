@@ -1,9 +1,8 @@
-import * as React from 'react';
-
-import './index.scss'
+import React from 'react';
 import { timelineDataParams } from '../../store/types'
 import { ARCHIVE } from '../../../../svg';
 import { getMonthEng, formatTimeNum } from '../../../../function/myFun';
+import './index.scss'
 
 interface propsParams {
 	timelineData: timelineDataParams

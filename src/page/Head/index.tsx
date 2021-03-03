@@ -1,13 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { StoreState, propsState } from './store/types';
 import * as actions from './store/actions';
 import { Route, BrowserRouter } from 'react-router-dom';
-// import ReactCSSTransitionGroup  from 'react-transition-group' 
 import TransitionGroup from 'react-addons-css-transition-group';
-
-import './index.scss'
 import Header from './Header/index'
 import Footer from './Footer/index'
 import Index from './Index/index';
@@ -15,6 +12,7 @@ import Archive from './Archive'
 import Message from './Message';
 import About from './About';
 import Unknow from './Unknow';
+import './index.scss'
 
 function Head(state: StoreState) {
   

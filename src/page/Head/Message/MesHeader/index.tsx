@@ -1,12 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { StoreState, propsState } from '../../store/types';
 import * as actions from '../../store/actions';
-
-import './index.scss'
 import { QUOTES_DOWN, QUOTES_UP } from '../../../../svg';
 import { message } from 'antd';
+import './index.scss'
 
 function MesHeader(state: StoreState) {
 

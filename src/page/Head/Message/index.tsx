@@ -1,12 +1,8 @@
-import * as React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { StoreState, propsState } from '../store/types';
-import * as actions from '../store/actions';
-
-import './index.scss'
+import React from 'react';
+import { StoreState } from '../store/types';
 import MesContent from './MesContent';
 import MesHeader from './MesHeader';
+import './index.scss'
 
 function Archive(state: StoreState) {
 

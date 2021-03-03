@@ -1,7 +1,5 @@
 import * as constants from './constants'
-import { LoginDateProps } from './types';
 import { Dispatch } from 'redux';
-import { loginApi } from '../../../function/api';
 
 export interface ChangeInputValueEnthusiasm {
     type: constants.CHANGE_INPUT_VALUE;

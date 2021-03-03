@@ -1,6 +1,4 @@
 import * as constants from './constants'
-import {  } from './types';
-import { Dispatch } from 'redux';
 
 export interface LeftEnthusiasm {
     type: constants.LEFT_PAGE_CONTROL_ENTHUSIASM;
