@@ -5,7 +5,7 @@ import { StoreState, propsState } from '../../store/types';
 import * as actions from '../../store/actions';
 import { QUOTES_DOWN, QUOTES_UP } from '../../../../svg';
 import { message } from 'antd';
-import './index.scss'
+import './index.less'
 
 function MesHeader(state: StoreState) {
 

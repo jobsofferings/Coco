@@ -6,7 +6,7 @@ import { StoreState, propsState } from './store/types';
 import * as actions from './store/actions';
 import { Store } from 'antd/lib/form/interface';
 import { loginApi } from '../../function/api';
-import './index.scss'
+import './index.less'
 
 const layout = {
     labelCol: { span: 4 },

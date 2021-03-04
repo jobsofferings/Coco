@@ -6,7 +6,7 @@ import * as actions from '../store/actions';
 import { LOGO, SEARCH } from '../../../svg'
 import { CLOSE } from '../../../svg_second'
 import { Link, withRouter } from 'react-router-dom';
-import './index.scss'
+import './index.less'
 
 function Header(state: StoreState) {
 

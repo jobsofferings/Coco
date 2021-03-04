@@ -2,7 +2,7 @@ import React from 'react';
 import { timelineDataParams } from '../../store/types'
 import { ARCHIVE } from '../../../../svg';
 import { getMonthEng, formatTimeNum } from '../../../../function/myFun';
-import './index.scss'
+import './index.less'
 
 interface propsParams {
 	timelineData: timelineDataParams

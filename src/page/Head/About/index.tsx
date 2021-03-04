@@ -1,7 +1,6 @@
 import React from 'react';
 import AboutHeader from './AboutHeader';
 import AboutContent from './AboutContent';
-import './index.scss'
 
 function Archive() {
 

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { StoreState, propsState } from '../../store/types';
 import * as actions from '../../store/actions';
 import { NotificationOutlined } from '@ant-design/icons';
-import './index.scss'
+import './index.less'
 
 interface ChangeCarousel {
 	isNext: boolean

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StoreState } from '../store/types';
-import './index.scss'
+import './index.less'
 
 export default (state: StoreState) => {
 	return (
