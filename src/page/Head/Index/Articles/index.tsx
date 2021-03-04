@@ -5,7 +5,7 @@ import { StoreState, propsState, articleItem } from '../../store/types';
 import * as actions from '../../store/actions';
 import { SEARCH, LOGO } from '../../../../svg';
 import { Empty } from 'antd';
-import './index.less'
+import './index.scss'
 
 function Carousel(state: StoreState) {
 

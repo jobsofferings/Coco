@@ -5,7 +5,7 @@ import { StoreState, propsState } from '../../store/types';
 import * as actions from '../../store/actions';
 import { Map, Marker } from 'react-amap';
 
-import './index.less'
+import './index.scss'
 import { ME, TOOL, POSITION, COMPANY, LIKE } from '../../../../svg';
 
 function AboutContent(state: StoreState) {

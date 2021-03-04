@@ -12,7 +12,7 @@ import Archive from './Archive'
 import Message from './Message';
 import About from './About';
 import Unknow from './Unknow';
-import './index.less'
+import './index.scss'
 
 function Head(state: StoreState) {
   

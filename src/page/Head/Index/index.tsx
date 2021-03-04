@@ -3,7 +3,7 @@ import Carousel from './Carousel';
 import Articles from './Articles';
 import Menu from '../Menu';
 import Category from '../Category';
-import './index.less'
+import './index.scss'
 
 function Index() {
 

@@ -6,6 +6,7 @@ import * as actions from '../store/actions';
 import Category from '../Category';
 import Menu from '../Menu';
 import TimeArchive from './TimeArchive';
+import './index.scss'
 
 function Archive(state: StoreState) {
   const { timelineData } = state;

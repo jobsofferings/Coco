@@ -5,7 +5,7 @@ import { StoreState, propsState } from '../store/types';
 import * as actions from '../store/actions';
 import { ARTICLE } from '../../../svg';
 import { Empty } from 'antd';
-import './index.less'
+import './index.scss'
 
 function Menu(state: StoreState) {
 

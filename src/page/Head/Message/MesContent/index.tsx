@@ -5,7 +5,7 @@ import { StoreState, propsState } from '../../store/types';
 import * as actions from '../../store/actions';
 import { Tooltip, message } from 'antd';
 import { LIKE } from '../../../../svg';
-import './index.less'
+import './index.scss'
 
 function MesContent(state: StoreState) {
 
