@@ -60,11 +60,11 @@ function AboutContent(state: StoreState) {
           </div>
           <div className="contacts-content">
             {/* <div>
-                            <GithubOutlined />
-                        </div>
-                        <div>
-                            <JUE_JIN />
-                        </div> */}
+                  <GithubOutlined />
+              </div>
+              <div>
+                  <JUE_JIN />
+              </div> */}
           </div>
         </div>
         <div className="about-my-posi">

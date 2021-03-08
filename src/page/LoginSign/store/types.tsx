@@ -1,13 +1,13 @@
 export interface StoreState {
-    [x: string]: any;
-    inputValue: string,
+  [x: string]: any;
+  inputValue: string,
 }
 
 export interface propsState {
-    loginSign: StoreState
+  loginSign: StoreState
 }
 
 export interface LoginDateProps {
-    username: string,
-    password: string
+  username: string,
+  password: string
 }

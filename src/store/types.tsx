@@ -1,4 +1,4 @@
 export interface StoreState {
-    leftPageFlag: boolean,
-    rightPageFlag: boolean
+  leftPageFlag: boolean,
+  rightPageFlag: boolean
 }
