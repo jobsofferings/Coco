@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import { StoreState, propsState } from '../../store/types';
 import * as actions from '../../store/actions';
 import { Map, Marker } from 'react-amap';
-
-import './index.scss'
 import { ME, TOOL, POSITION, COMPANY, LIKE } from '../../../../svg';
+import './index.less'
 
 function AboutContent(state: StoreState) {
 

@@ -1,0 +1,112 @@
+@interval: 20px;
+@allWidth: 1100px;
+@contentLeftWidth: 750px;
+@contentHeaderHeight: 60px;
+@contentItemHeight: 40px;
+@contentItemInterval: 10px;
+@allBackgroundColor: white;
+.about-content {
+  width: 100%;
+  .about-content-left {
+    float: left;
+    width: @contentLeftWidth;
+    margin-right: @interval;
+    margin-bottom: @interval * 5;
+    .about-my-description {
+      box-sizing: border-box;
+      width: 100%;
+      padding: @interval 10px;
+      background-color: @allBackgroundColor;
+      overflow: hidden;
+      .description-header {
+        width: 100%;
+        height: @contentHeaderHeight;
+        line-height: @contentHeaderHeight;
+        font-family: 'domain';
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        user-select: none;
+      }
+      .description-content {
+        width: 100%;
+        .description-item {
+          display: flex;
+          min-height: @contentItemHeight;
+          margin: @contentItemInterval 0;
+          overflow: hidden;
+          div {
+            width: 20px;
+            margin: 3px 15px;
+            svg {
+              width: 20px;
+            }
+          }
+          p {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.4rem;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+  .about-content-right {
+    float: right;
+    width: @allWidth - @contentLeftWidth - @interval;
+    margin-bottom: @interval * 5;
+    .about-my-contacts {
+      width: 100%;
+      height: 120px;
+      background-color: @allBackgroundColor;
+      margin-bottom: @interval;
+      .contacts-header {
+        width: 100%;
+        height: @contentHeaderHeight;
+        line-height: @contentHeaderHeight;
+        font-family: 'domain';
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        user-select: none;
+      }
+      .contacts-content {
+        > div {
+          float: left;
+          width: 36px;
+          height: 36px;
+          svg {
+            width: 36px;
+            height: 36px;
+          }
+        }
+      }
+    }
+    .about-my-posi {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background-color: @allBackgroundColor;
+      margin-bottom: @interval;
+      .posi-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: @contentHeaderHeight;
+        background-color: @allBackgroundColor;
+        opacity: 0.8;
+        z-index: 2;
+        p {
+          line-height: @contentHeaderHeight;
+          font-family: 'domain';
+          font-weight: bold;
+          font-size: 20px;
+          text-align: center;
+          user-select: none;
+        }
+      }
+    }
+  }
+}

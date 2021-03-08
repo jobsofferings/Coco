@@ -1,26 +1,26 @@
-$allBackgroundColor: white;
-$carouselHeight: 40px;
-$carouselWidth: 750px;
-$carouselControlWidth: 30px;
-$Offset: 30%;
-$interval: 20px;
+@allBackgroundColor: white;
+@carouselHeight: 40px;
+@carouselWidth: 750px;
+@carouselControlWidth: 30px;
+@Offset: 30%;
+@interval: 20px;
 .carousel {
     float: left;
     box-sizing: border-box;
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: $carouselHeight;
-    margin-bottom: $interval;
-    padding: 0 $carouselControlWidth 0 15px;
+    height: @carouselHeight;
+    margin-bottom: @interval;
+    padding: 0 @carouselControlWidth 0 15px;
     border-radius: 3px;
-    background-color: $allBackgroundColor;
+    background-color: @allBackgroundColor;
     .carousel-area {
         transition: all 0.4s ease;
     }
     .carousel-list {
-        height: $carouselHeight;
-        line-height: $carouselHeight;
+        height: @carouselHeight;
+        line-height: @carouselHeight;
         div {
             float: left;
             margin-right: 10px;
@@ -37,11 +37,11 @@ $interval: 20px;
         position: absolute;
         right: 0;
         top: 0;
-        width: $carouselControlWidth;
-        height: $carouselHeight;
+        width: @carouselControlWidth;
+        height: @carouselHeight;
         div {
-            width: $carouselControlWidth;
-            height: $carouselHeight / 2;
+            width: @carouselControlWidth;
+            height: @carouselHeight / 2;
             cursor: pointer;
         }
         .control-one::before,
@@ -51,28 +51,28 @@ $interval: 20px;
             content: " ";
             position: absolute;
             width: 2px;
-            height: $carouselHeight / 4;
+            height: @carouselHeight / 4;
             background-color: #666;
             box-shadow: 0 0 2px -10px #ccc;
             transition: all 0.2s ease;
         }
         .control-one::before {
-            top: $Offset;
+            top: @Offset;
             left: 35%;
             transform: translateY(-50%) rotate(45deg);
         }
         .control-one::after {
-            top: $Offset;
+            top: @Offset;
             left: 55%;
             transform: translateY(-50%) rotate(-45deg);
         }
         .control-two::before {
-            top: 100% - $Offset;
+            top: 100% - @Offset;
             left: 35%;
             transform: translateY(-50%) rotate(-45deg);
         }
         .control-two::after {
-            top: 100% - $Offset;
+            top: 100% - @Offset;
             left: 55%;
             transform: translateY(-50%) rotate(45deg);
         }
