@@ -1,9 +1,5 @@
 import React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
 import { Input, Form, Button } from 'antd';
-import { StoreState, propsState } from './store/types';
-import * as actions from './store/actions';
 import { Store } from 'antd/lib/form/interface';
 import './index.less'
 
@@ -12,7 +8,7 @@ const layout = {
 	wrapperCol: { span: 20 },
 };
 
-function LoginSign(state: StoreState) {
+function LoginSign() {
 
 	const [form] = Form.useForm();
 	let loginBtn: HTMLElement | null;
@@ -71,13 +67,4 @@ function LoginSign(state: StoreState) {
 	);
 }
 
-export function mapStateToProps(state: propsState) {
-	return { ...state.loginSign }
-}
-
-export function mapDispatchToProps(dispatch: Dispatch<actions.LoginSignAction>) {
-	return {
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(LoginSign));
+export default LoginSign

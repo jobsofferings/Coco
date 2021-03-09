@@ -1,13 +1,83 @@
 import React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { StoreState, propsState, articleItem } from '../../store/types';
-import * as actions from '../../store/actions';
 import { SEARCH, LOGO } from '../../../../svg';
 import { Empty } from 'antd';
 import './index.less'
 
-function Carousel(state: StoreState) {
+export interface articleItem {
+  title: string,
+  headImgSrc: string,
+  summary: string,
+  author: string,
+  like: number,
+  read: number,
+  comment: number,
+  timer: number,
+  timeFormated: string,
+}
+
+const ArticlesList = [{
+  title: '使用 React hooks 转化 class 的一些思考',
+  headImgSrc: 'http://www.jobsofferings.cn:4397/article1.jpg',
+  summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
+  author: '米卡',
+  like: 6,
+  read: 100,
+  comment: 13,
+  timer: 10000000,
+  timeFormated: 'Nove 9, 2020'
+}, {
+  title: '使用 React hooks 转化 class 的一些思考',
+  headImgSrc: 'http://www.jobsofferings.cn:4397/article2.jpg',
+  summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
+  author: '米卡',
+  like: 6,
+  read: 100,
+  comment: 13,
+  timer: 10000000,
+  timeFormated: 'Nove 9, 2020'
+}, {
+  title: '使用 React hooks 转化 class 的一些思考',
+  headImgSrc: 'https://static.jooger.me/img/source/20200404/vue-cli3_1585967248562.jpg?x-oss-process=style/watermark',
+  summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
+  author: '米卡',
+  like: 6,
+  read: 100,
+  comment: 13,
+  timer: 10000000,
+  timeFormated: 'Nove 9, 2020'
+}, {
+  title: '使用 React hooks 转化 class 的一些思考',
+  headImgSrc: 'https://static.jooger.me/img/source/20200404/vue-cli3_1585967248562.jpg?x-oss-process=style/watermark',
+  summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
+  author: '米卡',
+  like: 6,
+  read: 100,
+  comment: 13,
+  timer: 10000000,
+  timeFormated: 'Nove 9, 2020'
+}, {
+  title: '使用 React hooks 转化 class 的一些思考',
+  headImgSrc: 'https://static.jooger.me/img/source/20200404/vue-cli3_1585967248562.jpg?x-oss-process=style/watermark',
+  summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
+  author: '米卡',
+  like: 6,
+  read: 100,
+  comment: 13,
+  timer: 10000000,
+  timeFormated: 'Nove 9, 2020'
+}, {
+  title: '使用 React hooks 转化 class 的一些思考',
+  headImgSrc: 'https://static.jooger.me/img/source/20200404/vue-cli3_1585967248562.jpg?x-oss-process=style/watermark',
+  summary: '从 class 组件移植 Hooks 的成本太高，不能像其他公司一样随心所欲地拥抱新技术，所以我们对于 Hooks 的讨论，应该考虑的比较全面，才能更好的了解这个技术，以及是否应该在项目中尝试这一新技术',
+  author: '米卡',
+  like: 6,
+  read: 100,
+  comment: 13,
+  timer: 10000000,
+  timeFormated: 'Nove 9, 2020'
+}];
+
+function Carousel() {
 
   const renderArticlesList = (item: articleItem, index: number) => {
     return (<div key={index}>
@@ -45,7 +115,7 @@ function Carousel(state: StoreState) {
   return (
     <div className="articles">
       <div className="articles-area">
-        {state.ArticlesList.length ? state.ArticlesList.map((item, index) => renderArticlesList(item, index)) : <Empty description="有东西不见了哦" />}
+        {ArticlesList.length ? ArticlesList.map((item, index) => renderArticlesList(item, index)) : <Empty description="有东西不见了哦" />}
       </div>
       <div className="pinage">
 
@@ -54,12 +124,4 @@ function Carousel(state: StoreState) {
   );
 }
 
-export function mapStateToProps(state: propsState) {
-  return { ArticlesList: state.head.ArticlesList }
-}
-
-export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
-  return {}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Carousel));
+export default Carousel

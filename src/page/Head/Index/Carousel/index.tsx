@@ -1,8 +1,4 @@
 import React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { StoreState, propsState } from '../../store/types';
-import * as actions from '../../store/actions';
 import { NotificationOutlined } from '@ant-design/icons';
 import './index.less'
 
@@ -10,10 +6,11 @@ interface ChangeCarousel {
 	isNext: boolean
 }
 
-function Carousel(state: StoreState) {
+const carouselList = ['以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中']
+
+function Carousel() {
 	const [trans, setTrans] = React.useState(0);
 	const [interval, setInterval] = React.useState(0);
-	const carouselList = ['以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中']
 
 	/**
 	 * 上一个轮播
@@ -66,12 +63,4 @@ function Carousel(state: StoreState) {
 	);
 }
 
-export function mapStateToProps(state: propsState) {
-	return {}
-}
-
-export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
-	return {}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Carousel));
+export default Carousel

@@ -1,8 +1,4 @@
 import React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { StoreState, propsState } from './store/types';
-import * as actions from './store/actions';
 import { Route, BrowserRouter } from 'react-router-dom';
 import TransitionGroup from 'react-addons-css-transition-group';
 import Header from './Header/index'
@@ -14,7 +10,7 @@ import About from './About';
 import Unknow from './Unknow';
 import './index.less'
 
-function Head(state: StoreState) {
+function Head() {
   
   const router = [
     {
@@ -60,13 +56,4 @@ function Head(state: StoreState) {
   );
 }
 
-export function mapStateToProps(state: propsState) {
-  return { ...state.head }
-}
-
-export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
-  return {
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Head));
+export default Head

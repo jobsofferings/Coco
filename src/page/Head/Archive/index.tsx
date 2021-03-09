@@ -1,15 +1,63 @@
 import React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { StoreState, propsState } from '../store/types';
-import * as actions from '../store/actions';
 import Category from '../Category';
 import Menu from '../Menu';
 import TimeArchive from './TimeArchive';
 import './index.less'
 
-function Archive(state: StoreState) {
-  const { timelineData } = state;
+const timelineData = [
+  {
+    year: 2020,
+    monthList: [
+      {
+        month: 3,
+        dayList: [
+          {
+            day: 4,
+            link: 'www.baidu.com',
+            title: '使用 React hooks 转化 class 的一些思考'
+          },
+          {
+            day: 11,
+            link: 'www.baidu.com',
+            title: '使用 React hooks 转化 class 的一些思考'
+          },
+          {
+            day: 23,
+            link: 'www.baidu.com',
+            title: '使用 React hooks 转化 class 的一些思考'
+          },
+        ]
+      },
+      {
+        month: 4,
+        dayList: [
+          {
+            day: 7,
+            link: 'www.baidu.com',
+            title: '使用 React hooks 转化 class 的一些思考'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    year: 2021,
+    monthList: [
+      {
+        month: 5,
+        dayList: [
+          {
+            day: 9,
+            link: 'www.baidu.com',
+            title: '使用 React hooks 转化 class 的一些思考'
+          }
+        ]
+      }
+    ]
+  }
+]
+
+function Archive() {
   return (
     <div className="content-area">
       <div className="content-area-left">
@@ -25,15 +73,4 @@ function Archive(state: StoreState) {
   );
 }
 
-export function mapStateToProps(state: propsState) {
-  return {
-    timelineData: state.head.timelineData
-  }
-}
-
-export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
-  return {
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Archive));
+export default Archive

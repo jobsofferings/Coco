@@ -41,7 +41,7 @@
         height: @carouselHeight;
         div {
             width: @carouselControlWidth;
-            height: @carouselHeight / 2;
+            height: (@carouselHeight / 2);
             cursor: pointer;
         }
         .control-one::before,
@@ -51,7 +51,7 @@
             content: " ";
             position: absolute;
             width: 2px;
-            height: @carouselHeight / 4;
+            height: (@carouselHeight / 4);
             background-color: #666;
             box-shadow: 0 0 2px -10px #ccc;
             transition: all 0.2s ease;

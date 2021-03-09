@@ -1,13 +1,107 @@
 import React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { StoreState, propsState } from '../../store/types';
-import * as actions from '../../store/actions';
 import { Tooltip, message } from 'antd';
 import { LIKE } from '../../../../svg';
 import './index.less'
 
-function MesContent(state: StoreState) {
+const messageList = [{
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}, {
+  username: '三毛',
+  imgSrc: 'http://www.jobsofferings.cn:4397/头像1.jpg',
+  messageContent: '你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀', // 注意，这里允许输入100字，但是在后端那边需要再次判断
+  timer: 10000000,
+  timeFormated: '2020-03-17 14:47',
+  like: 3,
+  active: true
+}];
+
+function MesContent() {
 
   const handleLike = () => {
     message.info('当前功能未开发');
@@ -17,7 +111,7 @@ function MesContent(state: StoreState) {
     <div className="archive-content-area">
       <div className="archive-content">
         <div className="masonry">
-          {state.messageList.map((item, index) => {
+          {messageList.map((item, index) => {
             return <li key={index} className="archive-item item">
               {/* 注意，这里允许点击跳转友链 */}
               <div className="archive-item-header">
@@ -48,13 +142,4 @@ function MesContent(state: StoreState) {
   );
 }
 
-export function mapStateToProps(state: propsState) {
-  return { messageList: state.head.messageList }
-}
-
-export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
-  return {
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(MesContent));
+export default MesContent

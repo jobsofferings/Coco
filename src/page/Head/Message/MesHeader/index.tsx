@@ -1,13 +1,9 @@
 import React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { StoreState, propsState } from '../../store/types';
-import * as actions from '../../store/actions';
 import { QUOTES_DOWN, QUOTES_UP } from '../../../../svg';
 import { message } from 'antd';
 import './index.less'
 
-function MesHeader(state: StoreState) {
+function MesHeader() {
 
   const handleSubmit = () => {
     message.info('当前功能未开发');
@@ -38,12 +34,4 @@ function MesHeader(state: StoreState) {
   );
 }
 
-export function mapStateToProps(state: propsState) {
-  return {  }
-}
-
-export function mapDispatchToProps(dispatch: Dispatch<actions.HeadAction>) {
-  return {}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(MesHeader));
+export default MesHeader
