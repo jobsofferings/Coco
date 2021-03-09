@@ -10,11 +10,7 @@ const carouselList = ['以前的博客已下线，此博客迭代中', '以前�
 
 function Carousel() {
 	const [trans, setTrans] = React.useState(0);
-	const [interval, setInterval] = React.useState(0);
 
-	/**
-	 * 上一个轮播
-	 **/
 	const handleChangeCarousel = (params: ChangeCarousel) => {
 		const carousel = document.getElementsByClassName('carousel-area')[0];
 		const allHeight = carousel ? carousel.clientHeight : 0;
@@ -39,10 +35,8 @@ function Carousel() {
 	}
 
 	React.useEffect(() => {
-		setInterval(window.setInterval(startChangeCarousel, 7000));
-		return () => {
-			window.clearInterval(interval);
-		}
+		const interval = window.setInterval(startChangeCarousel, 7000);
+		return () => window.clearInterval(interval)
 	}, [trans])
 
 	return (
