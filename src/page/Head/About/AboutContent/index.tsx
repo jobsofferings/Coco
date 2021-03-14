@@ -13,15 +13,12 @@ function AboutContent() {
   }, {
     componentSvg: <LIKE />,
     description: '音乐，音乐，音乐，Coding，长跑，小说'
-
   }, {
     componentSvg: <TOOL />,
     description: 'React，Node，Vue，JavaScript...'
-
   }, {
     componentSvg: <POSITION />,
     description: '杭州创新创业园'
-
   }, {
     componentSvg: <COMPANY />,
     description: '杭州袋鼠云'
