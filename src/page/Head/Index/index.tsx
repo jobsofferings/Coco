@@ -7,6 +7,7 @@ import { useRequest } from 'ahooks';
 import { axiosPost } from 'src/function/axios';
 import { Spin } from 'antd';
 import './index.less'
+import BaseContent from 'src/components/BaseContent';
 
 interface GetArticleProps {
   offset: 0,
@@ -49,4 +50,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default BaseContent(Index);

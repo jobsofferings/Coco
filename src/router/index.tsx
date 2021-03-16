@@ -1,15 +1,22 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import Head from '../page/Head';
+import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
+import About from 'src/page/Head/About';
+import Archive from 'src/page/Head/Archive';
+import ArticleDetail from 'src/page/Head/ArticleDetail';
+import Index from 'src/page/Head/Index/index';
+import Message from 'src/page/Head/Message';
 import LoginSign from '../page/LoginSign';
-import Unknow from '../page/Head/Unknow';
 
 const BasicRoute = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/login" component={LoginSign} />
-      <Route path="/" component={Head} />
-      <Route path="/*" component={Unknow} />
+      <Route exact path={'/'} component={Index} />
+      <Route exact path={'/detail/:id'} component={ArticleDetail} />
+      <Route exact path={'/archive'} component={Archive} />
+      <Route exact path={'/about'} component={About} />
+      <Route exact path={'/message'} component={Message} />
+      <Redirect from='/*' to={Index as any} />
     </Switch>
   </BrowserRouter>
 );

@@ -2,6 +2,7 @@ import React from 'react';
 import Category from '../Category';
 import Menu from '../Menu';
 import TimeArchive from './TimeArchive';
+import BaseContent from 'src/components/BaseContent';
 import './index.less'
 
 const timelineData = [
@@ -73,4 +74,4 @@ function Archive() {
   );
 }
 
-export default Archive
+export default BaseContent(Archive)
