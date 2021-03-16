@@ -3,15 +3,18 @@ import Menu from '../Menu';
 import Category from '../Category';
 import { Spin } from 'antd';
 import BaseContent from 'src/components/BaseContent';
-import './index.less'
+import ArticleDetailContent from './ArticleDetailContent';
+import { useParams } from 'react-router-dom';
 
-function ArticleDetail() {
+const ArticleDetail = () => {
+
+  const { id = '' } = useParams<OPUtils.RouterParams>()
 
   return (
     <div className="content-area" key="one">
       <div className="content-area-left">
         <Spin spinning={false}>
-          123
+          <ArticleDetailContent id={id} />
         </Spin>
       </div>
       <div className="content-area-right">
@@ -22,6 +25,7 @@ function ArticleDetail() {
       </div>
     </div>
   );
+
 }
 
 export default BaseContent(ArticleDetail);

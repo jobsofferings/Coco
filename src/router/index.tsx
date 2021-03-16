@@ -16,7 +16,7 @@ const BasicRoute = () => (
       <Route exact path={'/archive'} component={Archive} />
       <Route exact path={'/about'} component={About} />
       <Route exact path={'/message'} component={Message} />
-      <Redirect from='/*' to={Index as any} />
+      <Redirect from='/*' to={'/'} />
     </Switch>
   </BrowserRouter>
 );

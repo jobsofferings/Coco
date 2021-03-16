@@ -4,23 +4,10 @@ import Articles, { articleItem } from './Articles';
 import Menu from '../Menu';
 import Category from '../Category';
 import { useRequest } from 'ahooks';
-import { axiosPost } from 'src/function/axios';
 import { Spin } from 'antd';
 import './index.less'
 import BaseContent from 'src/components/BaseContent';
-
-interface GetArticleProps {
-  offset: 0,
-  limit: 10
-}
-
-const getArticle = (props: GetArticleProps) => {
-  return new Promise((resolve) => {
-    axiosPost('/article', props).then(res => {
-      resolve(res);
-    })
-  })
-}
+import { getArticle } from 'src/fetch';
 
 function Index() {
 

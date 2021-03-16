@@ -2,6 +2,7 @@ import React from 'react';
 import { SEARCH, LOGO } from '../../../../svg';
 import { Empty } from 'antd';
 import './index.less'
+import { withRouter } from 'react-router-dom';
 
 export interface articleItem {
   title: string,
@@ -13,24 +14,30 @@ export interface articleItem {
   comment: number,
   timer: number,
   timeFormated: string,
+  id: number
 }
 
-function Carousel({ data }: any) {
+const Carousel = ({ data, ...props }: any) => {
+
+  const handleToDetail = (id: number) => {
+    props.history.push('detail/' + id);
+  }
 
   const renderArticlesList = (item: articleItem, index: number) => {
+    const toDetail = () => handleToDetail(item.id);
     return (
       <div key={index}>
         <div className="articles-header">
           <div>
-            <p>{item.title}</p>
+            <p onClick={toDetail}>{item.title}</p>
           </div>
         </div>
         <div className="articles-content">
           <div className="articles-content-img-area">
-            <img src={item.headImgSrc} alt={item.title} title={item.title} />
+            <img src={item.headImgSrc} onClick={toDetail} alt={item.title} title={item.title} />
           </div>
           <div className="articles-content-summary-area">
-            <p>{item.summary}</p>
+            <p onClick={toDetail}>{item.summary}</p>
           </div>
         </div>
         <div className="articles-meta">
@@ -58,10 +65,10 @@ function Carousel({ data }: any) {
         {data.length ? data.map((item: any, index: number) => renderArticlesList(item, index)) : <Empty description="有东西不见了哦" />}
       </div>
       <div className="pinage">
-        
+
       </div>
     </div>
   );
 }
 
-export default Carousel
+export default withRouter(Carousel)
