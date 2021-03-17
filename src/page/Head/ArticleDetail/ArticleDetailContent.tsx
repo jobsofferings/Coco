@@ -1,8 +1,8 @@
-import { useRequest } from "ahooks";
 import React from "react";
+import { Spin } from "antd";
 import BaseMarkdown from "src/components/BaseMarkdown/BaseMarkdown";
 import { getArticleById } from "src/fetch";
-import { articleItem } from "../Archive/TimeArchive/types";
+import useBaseQuery from "src/hooks/useBaseQuery";
 import './ArticleDetailContent.less'
 
 interface ArticleDetailContentProps {
@@ -11,14 +11,19 @@ interface ArticleDetailContentProps {
 
 const ArticleDetailContent = ({ id }: ArticleDetailContentProps) => {
 
-  const { data } = useRequest<{ data: articleItem }>(() => getArticleById({
-    id
-  }));
+  const { data, isLoading } = useBaseQuery({
+    query: '/article',
+    queryFn: () => getArticleById({
+      id
+    })
+  })
 
   return <div className='article-detail-content'>
-    <BaseMarkdown 
-      source={data?.data?.summary || ''}
-    />
+    <Spin spinning={isLoading}>
+      <BaseMarkdown
+        source={data?.summary || ''}
+      />
+    </Spin>
   </div>;
 }
 
