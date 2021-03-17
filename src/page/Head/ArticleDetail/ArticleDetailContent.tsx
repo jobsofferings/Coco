@@ -11,15 +11,15 @@ interface ArticleDetailContentProps {
 
 const ArticleDetailContent = ({ id }: ArticleDetailContentProps) => {
 
-  const { data, isLoading } = useBaseQuery({
-    query: '/article',
+  const { data, loading } = useBaseQuery({
+    query: '/articleDetail',
     queryFn: () => getArticleById({
       id
     })
   })
 
   return <div className='article-detail-content'>
-    <Spin spinning={isLoading}>
+    <Spin spinning={loading}>
       <BaseMarkdown
         source={data?.summary || ''}
       />

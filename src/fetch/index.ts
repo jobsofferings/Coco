@@ -4,6 +4,7 @@ export interface GetArticleProps {
   offset?: number,
   limit?: number,
   id?: string
+  key?: string
 }
 
 export interface GetArticleByIdProps {

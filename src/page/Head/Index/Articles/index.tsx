@@ -1,8 +1,9 @@
 import React from 'react';
 import { SEARCH, LOGO } from '../../../../svg';
 import { Empty } from 'antd';
-import './index.less'
 import { withRouter } from 'react-router-dom';
+import { abstractFn } from 'src/function/myFun';
+import './index.less'
 
 export interface articleItem {
   title: string,
@@ -22,7 +23,7 @@ const Carousel = ({ data, ...props }: any) => {
   const handleToDetail = (id: number) => {
     props.history.push('detail/' + id);
   }
-
+  
   const renderArticlesList = (item: articleItem, index: number) => {
     const toDetail = () => handleToDetail(item.id);
     return (
@@ -33,11 +34,11 @@ const Carousel = ({ data, ...props }: any) => {
           </div>
         </div>
         <div className="articles-content">
-          <div className="articles-content-img-area">
+          {item.headImgSrc && <div className="articles-content-img-area">
             <img src={item.headImgSrc} onClick={toDetail} alt={item.title} title={item.title} />
-          </div>
+          </div>}
           <div className="articles-content-summary-area">
-            <p onClick={toDetail}>{item.summary}</p>
+            <p onClick={toDetail}>{abstractFn(item.summary)}</p>
           </div>
         </div>
         <div className="articles-meta">

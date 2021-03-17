@@ -1,23 +1,28 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import Carousel from './Carousel';
-import Articles, { articleItem } from './Articles';
+import Articles from './Articles';
 import Menu from '../Menu';
 import Category from '../Category';
-import { useRequest } from 'ahooks';
 import { Spin } from 'antd';
-import './index.less'
 import BaseContent from 'src/components/BaseContent';
 import { getArticle } from 'src/fetch';
+import useBaseQuery from 'src/hooks/useBaseQuery';
+import { PAGE_LIMIT } from 'src/config';
+import './index.less'
 
-function Index() {
+const Index = () => {
 
-  /**
- * 建议封装一下useBaseRequest, data在外层导出，type限制(考虑)
- **/
-  const { data, loading } = useRequest<{ data: articleItem[] }>(() => getArticle({
-    offset: 0,
-    limit: 10
-  }));
+  const { id: key = '' } = useParams<OPUtils.RouterParams>()
+
+  const { data, loading } = useBaseQuery({
+    query: '/article',
+    queryFn: () => getArticle({
+      offset: 0,
+      limit: PAGE_LIMIT,
+      key,
+    })
+  })
 
   return (
     <div className="content-area" key="one">

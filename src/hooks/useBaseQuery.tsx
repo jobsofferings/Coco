@@ -11,13 +11,13 @@ function useBaseQuery({
   ...queryOptions
 }: useBaseQueryProps) {
 
-  const { data, ...result }: any = useQuery(query, {
+  const { data, isLoading, ...result } = useQuery(query, {
     ...LAZY_QUERY_OPTIONS,
     ...queryOptions,
   })
 
-  return { data: data?.data, ...result };
-  
+  return { data: data?.data, loading: isLoading, ...result };
+
 }
 
 export default useBaseQuery;
