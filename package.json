@@ -8,7 +8,7 @@
     "Coco",
     "Blog"
   ],
-  "proxy": "http://127.0.0.1:5000",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

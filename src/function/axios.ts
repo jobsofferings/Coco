@@ -1,5 +1,7 @@
 import axios from "axios";
 
+axios.defaults.baseURL = 'http://www.jobsofferings.cn:5000'
+
 export const axiosGet = (url: string, data: any) => {
   return new Promise((resolve, reject) => {
     axios
