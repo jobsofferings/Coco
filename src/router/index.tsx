@@ -12,7 +12,7 @@ const BasicRoute = () => (
     <Switch>
       <Route path="/login" component={LoginSign} />
       <Route exact path={'/'} component={Index} />
-      <Route exact path={'/:id'} component={Index} />
+      <Route exact path={'/search/:id'} component={Index} />
       <Route exact path={'/detail/:id'} component={ArticleDetail} />
       <Route exact path={'/archive'} component={Archive} />
       <Route exact path={'/about'} component={About} />

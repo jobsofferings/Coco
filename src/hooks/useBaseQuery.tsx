@@ -1,6 +1,8 @@
 import { QueryKey, useQuery, UseQueryOptions } from "react-query";
 
-const LAZY_QUERY_OPTIONS = {};
+const LAZY_QUERY_OPTIONS = {
+  cacheTime: 0,
+};
 
 export interface useBaseQueryProps extends Omit<UseQueryOptions<any>, 'service'> {
   query: QueryKey
@@ -16,7 +18,7 @@ function useBaseQuery({
     ...queryOptions,
   })
 
-  return { data: data?.data, loading: isLoading, ...result };
+  return { data: data?.data || {}, loading: isLoading, ...result };
 
 }
 

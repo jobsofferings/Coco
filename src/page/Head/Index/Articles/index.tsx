@@ -1,9 +1,13 @@
 import React from 'react';
 import { SEARCH, LOGO } from '../../../../svg';
-import { Empty } from 'antd';
+import { Empty, Spin } from 'antd';
 import { withRouter } from 'react-router-dom';
-import { abstractFn } from 'src/function/myFun';
+import { abstractFn, getMonthEng } from 'src/function/myFun';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { LoadingOutlined } from '@ant-design/icons';
 import './index.less'
+
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 export interface articleItem {
   title: string,
@@ -13,19 +17,20 @@ export interface articleItem {
   like: number,
   read: number,
   comment: number,
-  timer: number,
+  timer: string,
   timeFormated: string,
   id: number
 }
 
-const Carousel = ({ data, ...props }: any) => {
+const Articles = ({ data, getMore, total = 0, ...props }: any) => {
 
   const handleToDetail = (id: number) => {
     props.history.push('detail/' + id);
   }
-  
+
   const renderArticlesList = (item: articleItem, index: number) => {
     const toDetail = () => handleToDetail(item.id);
+    const timer = new Date(parseInt(item.timer));
     return (
       <div key={index}>
         <div className="articles-header">
@@ -47,12 +52,12 @@ const Carousel = ({ data, ...props }: any) => {
             <div>{item.author}</div>
             <div>{item.read} 次阅读</div>
             <div>{item.like} 人喜欢</div>
-            <div>{item.comment} 条评论</div>
+            {/* <div>{item.comment} 条评论</div> */}
           </div>
           <div className="articles-meta-right">
             <div>
               <SEARCH />
-              <p>Nove 9, 2020</p>
+              <p>{`${getMonthEng(timer.getMonth() + 1)} ${timer.getDay()}, ${timer.getFullYear()}`}</p>
             </div>
           </div>
         </div>
@@ -60,10 +65,36 @@ const Carousel = ({ data, ...props }: any) => {
     )
   }
 
+  const renderLoader = (data: any[]) => {
+    return (data.length && data.length < total) ?
+      <div className="loader" key={0}>
+        <span>Loading ...</span>
+        <Spin indicator={antIcon} size='small' />
+      </div> :
+      null
+  }
+
+  const renderLoaderEnd = (data: any[]) => {
+    return (data.length && data.length >= total) ?
+      <div className="loader-end" key={0}>
+        <span>已经没有了哦</span>
+      </div> :
+      null
+  }
+
   return (
     <div className="articles">
       <div className="articles-area">
-        {data.length ? data.map((item: any, index: number) => renderArticlesList(item, index)) : <Empty description="有东西不见了哦" />}
+        <InfiniteScroll
+          className="list-contents"
+          dataLength={total}
+          next={getMore}
+          loader={renderLoader(data)}
+          hasMore={data.length < total}
+          endMessage={renderLoaderEnd(data)}
+        >
+          {data.length ? data.map((item: any, index: number) => renderArticlesList(item, index)) : <Empty description="有东西不见了哦" />}
+        </InfiniteScroll>
       </div>
       <div className="pinage">
 
@@ -72,4 +103,4 @@ const Carousel = ({ data, ...props }: any) => {
   );
 }
 
-export default withRouter(Carousel)
+export default withRouter(Articles)

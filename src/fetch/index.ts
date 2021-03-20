@@ -11,18 +11,20 @@ export interface GetArticleByIdProps {
   id: string
 }
 
-export const getArticle = (props: GetArticleProps) => {
-  return new Promise((resolve) => {
-    axiosPost('/article', props).then(res => {
+function baseQueryFunction<T = any>(query: string, props: T) {
+  return new Promise((resolve, reject) => {
+    axiosPost(query, props).then(res => {
       resolve(res);
+    }).catch(err => {
+      reject(err)
     })
   })
 }
 
-export const getArticleById = (props: GetArticleByIdProps) => {
-  return new Promise((resolve) => {
-    axiosPost('/articleDetail', props).then(res => {
-      resolve(res);
-    })
-  })
+export function getArticle<T = GetArticleProps>(props: T) {
+  return baseQueryFunction<T>('/article', props)
+}
+
+export function getArticleById<T = GetArticleByIdProps>(props: T) {
+  return baseQueryFunction<T>('/articleDetail', props)
 }
