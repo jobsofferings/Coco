@@ -57,7 +57,7 @@ const Articles = ({ data, getMore, total = 0, ...props }: any) => {
           <div className="articles-meta-right">
             <div>
               <SEARCH />
-              <p>{`${getMonthEng(timer.getMonth() + 1)} ${timer.getDay()}, ${timer.getFullYear()}`}</p>
+              <p>{`${getMonthEng(timer.getMonth() + 1)} ${timer.getDate()}, ${timer.getFullYear()}`}</p>
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 import React from "react";
-import { Spin } from "antd";
+import { Col, Row, Spin } from "antd";
 import BaseMarkdown from "src/components/BaseMarkdown/BaseMarkdown";
 import { getArticleById } from "src/fetch";
 import useBaseQuery from "src/hooks/useBaseQuery";
+import { formatDateToString } from "src/function/myFun";
 import './ArticleDetailContent.less'
 
 interface ArticleDetailContentProps {
@@ -21,6 +22,16 @@ const ArticleDetailContent = ({ id }: ArticleDetailContentProps) => {
 
   return <div className='article-detail-content'>
     <Spin spinning={loading}>
+      <div className='author'>
+        <Col>
+          <div className='name'>{data.author}</div>
+          <Row>
+            <div className='time'>{formatDateToString(new Date(parseInt(data.timer)))}</div>
+            <div className='read'>阅读{data.read}</div>
+          </Row>
+        </Col>
+      </div>
+      <h1>{data.title}</h1>
       <BaseMarkdown
         source={data?.summary || ''}
       />

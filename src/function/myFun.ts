@@ -28,3 +28,5 @@ export const abstractFn = (res: string) => {
     return str.slice(0, 155);
   }
 }
+
+export const formatDateToString = (date: Date) => `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
