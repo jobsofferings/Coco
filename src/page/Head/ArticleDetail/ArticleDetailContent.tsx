@@ -15,7 +15,8 @@ const ArticleDetailContent = ({ id }: ArticleDetailContentProps) => {
     query: '/articleDetail',
     queryFn: () => getArticleById({
       id
-    })
+    }),
+    cacheTime: 0,
   })
 
   return <div className='article-detail-content'>

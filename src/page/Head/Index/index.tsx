@@ -14,28 +14,32 @@ import './index.less'
 const Index = () => {
 
   const { id: key = '' } = useParams<OPUtils.RouterParams>()
-  const [limit, setLimit] = useState(PAGE_LIMIT);
+  const [params, setParams] = useState({
+    limit: PAGE_LIMIT,
+    offset: 0
+  });
   const [list, setList] = useState([]);
   const [listTotal, setListTotal] = useState(0);
 
-  const { data: { data, total }, loading, refetch } = useBaseQuery({
+  const { data: { data, total }, loading, } = useBaseQuery({
     query: [{
-      offset: 0,
-      limit,
+      ...params,
       key,
     }],
     queryFn: ({ queryKey }) => getArticle(queryKey[0]),
   })
 
   useEffect(() => {
-    data && setList(data);
+    data && setList(list.concat(data));
     total && setListTotal(total);
   }, [data, total])
 
   const getMore = () => {
-    if (limit < listTotal) {
-      setLimit(limit + 10)
-      refetch();
+    if (params.offset < listTotal) {
+      setParams({
+        ...params,
+        offset: params.offset + params.limit
+      })
     }
   }
 

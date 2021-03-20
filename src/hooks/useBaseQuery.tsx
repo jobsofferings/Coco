@@ -1,7 +1,7 @@
 import { QueryKey, useQuery, UseQueryOptions } from "react-query";
 
 const LAZY_QUERY_OPTIONS = {
-  cacheTime: 0,
+ 
 };
 
 export interface useBaseQueryProps extends Omit<UseQueryOptions<any>, 'service'> {
