@@ -25,7 +25,7 @@ export interface articleItem {
 const Articles = ({ data, getMore, total = 0, ...props }: any) => {
 
   const handleToDetail = (id: number) => {
-    props.history.push('detail/' + id);
+    props.history.push('/detail/' + id);
   }
 
   const renderArticlesList = (item: articleItem, index: number) => {

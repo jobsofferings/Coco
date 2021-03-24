@@ -4,6 +4,8 @@ import Menu from '../Menu';
 import TimeArchive from './TimeArchive';
 import BaseContent from 'src/components/BaseContent';
 import './index.less'
+// import { getArticleById } from 'src/fetch';
+// import useBaseQuery from 'src/hooks/useBaseQuery';
 
 const timelineData = [
   {
@@ -59,6 +61,15 @@ const timelineData = [
 ]
 
 function Archive() {
+
+  // const { data, loading } = useBaseQuery({
+  //   query: '/articleDetail',
+  //   queryFn: () => getArticleById({
+  //     id
+  //   }),
+  //   cacheTime: 0,
+  // })
+
   return (
     <div className="content-area">
       <div className="content-area-left">
