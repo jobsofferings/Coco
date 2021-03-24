@@ -18,28 +18,26 @@ const navList = [{
   href: '/message'
 }];
 
-function Header(props: any) {
+const Header = (props: any) => {
 
   const [navIndex, setNavIndex] = useState(0);
   const [inputValue, setInputValue] = useState('');
 
   const pathname = props.history.location.pathname;
 
-  const handelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let inputValue = e.target.value;
-    setInputValue(inputValue);
-  }
+  const handelChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => setInputValue(value)
 
   const handleClearInput = () => {
     setInputValue('');
   }
 
-  const handleSearch = () => {
-    console.log('根据inputValue查询文章');
+  const handleSearch = (val: string) => {
+    props.history.push(`/search/${val}`)
+    setInputValue('')
   }
 
   const handlePress = ({ charCode }: React.KeyboardEvent) => {
-    charCode === 13 && handleSearch()
+    charCode === 13 && handleSearch(inputValue)
   }
 
   const handleChangerouter = (navIndex: number) => setNavIndex(navIndex)
@@ -77,8 +75,14 @@ function Header(props: any) {
         </div>
         <div className="search">
           <CLOSE className={`search-close ${!inputValue.length ? 'hide' : ''}`} onClick={handleClearInput} />
-          <input value={inputValue} onKeyPress={handlePress} onChange={handelChange} type="text" placeholder="搜索文章" />
-          <div className="search-icon" onClick={handleSearch}>
+          <input
+            type="text"
+            value={inputValue}
+            onKeyPress={handlePress}
+            onChange={handelChange}
+            placeholder="搜索文章"
+          />
+          <div className="search-icon" onClick={() => handleSearch(inputValue)}>
             <SEARCH className="icon" />
           </div>
         </div>

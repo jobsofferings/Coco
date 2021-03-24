@@ -11,8 +11,8 @@ const BasicRoute = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/login" component={LoginSign} />
-      <Route exact path={'/'} component={Index} />
-      <Route exact path={'/search/:id'} component={Index} />
+      <Route exact path={'/'} component={() => <Index key='1' />} />
+      <Route exact path={'/search/:id'} component={() => <Index key='2' />} />
       <Route exact path={'/detail/:id'} component={ArticleDetail} />
       <Route exact path={'/archive'} component={Archive} />
       <Route exact path={'/about'} component={About} />
