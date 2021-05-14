@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { LOGO, SEARCH } from '../../../svg'
-import { CLOSE } from '../../../svg_second'
+import { ReactComponent as LOGO } from 'src/assert/logo.svg'
+import { ReactComponent as SEARCH } from 'src/assert/search.svg'
+import { ReactComponent as CLOSE } from 'src/assert/close.svg'
 import { Link, withRouter } from 'react-router-dom';
 import './index.less'
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { QUOTES_DOWN, QUOTES_UP } from '../../../../svg';
+import { ReactComponent as QUOTES_DOWN } from 'src/assert/quotesDown.svg'
+import { ReactComponent as QUOTES_UP } from 'src/assert/quotesUp.svg'
 import { message } from 'antd';
 import './index.less'
 

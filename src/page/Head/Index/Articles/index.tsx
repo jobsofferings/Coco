@@ -1,5 +1,6 @@
 import React from 'react';
-import { SEARCH, LOGO } from '../../../../svg';
+import { ReactComponent as LOGO } from 'src/assert/logo.svg'
+import { ReactComponent as SEARCH } from 'src/assert/search.svg'
 import { Empty, Spin } from 'antd';
 import { withRouter } from 'react-router-dom';
 import { abstractFn, getMonthEng } from 'src/function/myFun';

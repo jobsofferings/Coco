@@ -1,5 +1,5 @@
 import React from 'react';
-import { CATEGORY } from '../../../svg';
+import { ReactComponent as CATEGORY } from 'src/assert/category.svg'
 import { Empty } from 'antd';
 import './index.less'
 

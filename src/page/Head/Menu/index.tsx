@@ -1,5 +1,5 @@
 import React from 'react';
-import { ARTICLE } from '../../../svg';
+import { ReactComponent as ARTICLE } from 'src/assert/article.svg'
 import { Empty } from 'antd';
 import './index.less'
 

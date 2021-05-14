@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tooltip, message } from 'antd';
-import { LIKE } from '../../../../svg';
+import { ReactComponent as LIKE } from 'src/assert/like.svg'
 import './index.less'
 
 const messageList = [{
