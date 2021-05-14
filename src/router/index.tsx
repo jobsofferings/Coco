@@ -1,14 +1,17 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
+import { Route, Switch, Router, Redirect } from 'react-router-dom';
+import { createBrowserHistory } from 'history'
 import About from 'src/page/Head/About';
 import Archive from 'src/page/Head/Archive';
 import ArticleDetail from 'src/page/Head/ArticleDetail';
 import Index from 'src/page/Head/Index/index';
-import Message from 'src/page/Head/Message';
+import FriendLink from 'src/page/Head/FriendLink';
 import LoginSign from '../page/LoginSign';
 
+const history = createBrowserHistory();
+
 const BasicRoute = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <Switch>
       <Route path="/login" component={LoginSign} />
       <Route exact path={'/'} component={() => <Index key='1' />} />
@@ -16,10 +19,10 @@ const BasicRoute = () => (
       <Route exact path={'/detail/:id'} component={ArticleDetail} />
       <Route exact path={'/archive'} component={Archive} />
       <Route exact path={'/about'} component={About} />
-      <Route exact path={'/message'} component={Message} />
+      <Route exact path={'/link'} component={FriendLink} />
       <Redirect from='/*' to={'/'} />
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 

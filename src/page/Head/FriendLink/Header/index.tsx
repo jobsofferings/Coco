@@ -1,14 +1,14 @@
 import React from 'react';
 import { ReactComponent as QUOTES_DOWN } from 'src/assert/quotesDown.svg'
 import { ReactComponent as QUOTES_UP } from 'src/assert/quotesUp.svg'
-import { message } from 'antd';
+import { handleSubmit } from 'src/function/myFun';
 import './index.less'
 
-function MesHeader() {
+interface HeaderProps {
+  total: number
+}
 
-  const handleSubmit = () => {
-    message.info('当前功能未开发');
-  }
+const Header = ({ total }: HeaderProps) => {
 
   return (
     <div className="archive-header-area">
@@ -18,21 +18,21 @@ function MesHeader() {
             <QUOTES_UP />
           </div>
           <div>
-            <p>人的平均寿命77岁，一共28105天，67w小时，4047w分钟，24亿秒左右，这10秒你在读这段话，这10秒你属于我。你好陌生人，我爱你</p>
+            <p>人的平均寿命77岁，一共28105天，67w小时，4047w分钟，24亿秒左右，这10秒你在读这段话，这10秒你属于我。</p>
           </div>
           <div>
             <QUOTES_DOWN />
           </div>
         </div>
         <div className="archive-header-submit">
-          <button onClick={handleSubmit}>留下足迹</button>
+          <button onClick={handleSubmit}>给我留言</button>
         </div>
         <div className="archive-header-num">
-          <p>已有 40 条留言</p>
+          <p>已有 {total} 个友链</p>
         </div>
       </div>
     </div>
   );
 }
 
-export default MesHeader
+export default Header

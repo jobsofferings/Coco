@@ -11,7 +11,7 @@ const ArticleDetail = () => {
   const { id = '' } = useParams<OPUtils.RouterParams>()
 
   return (
-    <div className="content-area" key="one">
+    <div className="content-area" key={id}>
       <div className="content-area-left">
         <Spin spinning={false}>
           <ArticleDetailContent id={id} />

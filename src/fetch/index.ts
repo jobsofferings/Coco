@@ -28,3 +28,11 @@ export function getArticle<T = GetArticleProps>(props: T) {
 export function getArticleById<T = GetArticleByIdProps>(props: T) {
   return baseQueryFunction<T>('/articleDetail', props)
 }
+
+export function starArticles<T = GetArticleByIdProps>(props: T) {
+  return baseQueryFunction<T>('/starArticles', props)
+}
+
+export function getFriendLink<T = GetArticleByIdProps>(props: T) {
+  return baseQueryFunction<T>('/getFriendLink', props)
+}

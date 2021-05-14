@@ -2,7 +2,7 @@ export interface StoreState {
   [x: string]: any;
   inputValue: string,
   navList: navItem[],
-  messageList: messageItem[],
+  friendLinkList: friendLinkItem[],
   starArticleList: starArticleItem[],
   ArticlesList: articleItem[],
   categoryList: string[],
@@ -22,10 +22,10 @@ export interface navItem {
   href: string,
 }
 
-export interface messageItem {
+export interface friendLinkItem {
   username: string,
   imgSrc: string,
-  messageContent: string,
+  friendLinkContent: string,
   timer: number,
   timeFormated: string,
   like: number,

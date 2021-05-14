@@ -1,3 +1,5 @@
+import { message } from "antd";
+
 export const getMonthEng = (month: number) => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][month - 1];
 
 /**
@@ -30,3 +32,5 @@ export const abstractFn = (res: string) => {
 }
 
 export const formatDateToString = (date: Date) => `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
+
+export const handleSubmit = () => message.info('当前功能未开发')

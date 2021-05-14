@@ -15,8 +15,8 @@ const navList = [{
   title: '关于',
   href: '/about'
 }, {
-  title: '留言区',
-  href: '/message'
+  title: '友链',
+  href: '/link'
 }];
 
 const Header = (props: any) => {
