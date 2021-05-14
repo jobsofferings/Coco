@@ -6,7 +6,7 @@ import { getFriendLink } from 'src/fetch';
 import useBaseQuery from 'src/hooks/useBaseQuery';
 import './index.less'
 
-function Archive() {
+const FriendLink = () => {
 
   const { data: { data } } = useBaseQuery({
     query: '/getFriendLink',
@@ -21,4 +21,4 @@ function Archive() {
   );
 }
 
-export default BaseContent(Archive);
+export default BaseContent(FriendLink);

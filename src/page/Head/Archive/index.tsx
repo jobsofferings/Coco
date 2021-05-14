@@ -5,7 +5,7 @@ import TimeArchive from './TimeArchive';
 import BaseContent from 'src/components/BaseContent';
 import './index.less'
 
-function Archive() {
+function TimeLine() {
 
   return (
     <div className="content-area">
@@ -22,4 +22,4 @@ function Archive() {
   );
 }
 
-export default BaseContent(Archive)
+export default BaseContent(TimeLine)

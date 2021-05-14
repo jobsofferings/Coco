@@ -4,7 +4,7 @@ import AboutContent from './AboutContent';
 import BaseContent from 'src/components/BaseContent';
 import './index.less'
 
-function Archive() {
+function About() {
 
   return (
     <div className="content-area" key="three">
@@ -14,4 +14,4 @@ function Archive() {
   );
 }
 
-export default BaseContent(Archive);
+export default BaseContent(About);

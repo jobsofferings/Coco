@@ -36,3 +36,7 @@ export function starArticles<T = GetArticleByIdProps>(props: T) {
 export function getFriendLink<T = GetArticleByIdProps>(props: T) {
   return baseQueryFunction<T>('/getFriendLink', props)
 }
+
+export function addMessage<T = GetArticleByIdProps>(props: T) {
+  return baseQueryFunction<T>('/addMessage', props)
+}
