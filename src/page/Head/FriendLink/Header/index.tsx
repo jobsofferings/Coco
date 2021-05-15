@@ -43,7 +43,10 @@ const Header = ({ total, refetch }: HeaderProps) => {
     }, 300)
   }
 
-  const handleHideModal = () => setVisible(false)
+  const handleHideModal = () => {
+    setVisible(false)
+    setMessageContent('')
+  }
 
   return (
     <div className="archive-header-area">

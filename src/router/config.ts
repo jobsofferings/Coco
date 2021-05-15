@@ -1,0 +1,7 @@
+export const PATH_ROOT = '/'
+export const PATH_LOGIN = '/login'
+export const PATH_SEARCH = '/search'
+export const PATH_DETAIL = '/detail'
+export const PATH_ARCHIVE = '/archive'
+export const PATH_ABOUT = '/about'
+export const PATH_LINK = '/link'

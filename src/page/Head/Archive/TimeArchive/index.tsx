@@ -7,6 +7,7 @@ import { formatTimeNum, getMonthEng } from 'src/function/myFun';
 import { Spin } from 'antd';
 import { withRouter } from 'react-router-dom';
 import { articleItem } from '../../Index/Articles';
+import { PATH_DETAIL } from 'src/router/config';
 import './index.less'
 
 const iconStyle = { width: 40, height: 40 };
@@ -69,7 +70,7 @@ const TimeArchive = (props: any) => {
 		})
 	}
 
-	const handleToDetails = (id: string) => props.history.push(`/detail/${id}`);
+	const handleToDetails = (id: string) => props.history.push(`${PATH_DETAIL}/${id}`);
 
 	return (
 		<Spin spinning={loading}>

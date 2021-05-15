@@ -21,6 +21,14 @@ function baseQueryFunction<T = any>(query: string, props: T) {
   })
 }
 
+export function login<T = GetArticleByIdProps>(props: T) {
+  return baseQueryFunction<T>('/login', props)
+}
+
+export function sign<T = GetArticleByIdProps>(props: T) {
+  return baseQueryFunction<T>('/sign', props)
+}
+
 export function getArticle<T = GetArticleProps>(props: T) {
   return baseQueryFunction<T>('/article', props)
 }

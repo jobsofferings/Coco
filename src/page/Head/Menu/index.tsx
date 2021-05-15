@@ -5,6 +5,7 @@ import { starArticles } from 'src/fetch';
 import useBaseQuery from 'src/hooks/useBaseQuery';
 import { articleItem } from '../Index/Articles';
 import { withRouter } from 'react-router';
+import { PATH_DETAIL } from 'src/router/config';
 import './index.less'
 
 const Menu = (props: any) => {
@@ -15,14 +16,14 @@ const Menu = (props: any) => {
   })
 
   const handleToDetail = (id: number) => {
-    props.history.replace('/detail/' + id);
+    props.history.push(`${PATH_DETAIL}/${id}`);
   }
 
   const renderStarArticle = (data: articleItem[] = []) => {
     return data.length ? data.map((item, index) => (
-      <div onClick={() => handleToDetail(item.id)} className="menu-article" key={index}>
+      <div className="menu-article" key={index}>
         <div>{index + 1}</div>
-        <p>{item.title}</p>
+        <p onClick={() => handleToDetail(item.id)}>{item.title}</p>
       </div>
     )) :
       <Empty description="有东西不见了哦" />

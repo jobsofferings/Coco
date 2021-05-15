@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { abstractFn, getMonthEng } from 'src/function/myFun';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { LoadingOutlined } from '@ant-design/icons';
+import { PATH_DETAIL } from 'src/router/config';
 import './index.less'
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
@@ -26,7 +27,7 @@ export interface articleItem {
 const Articles = ({ data, getMore, total = 0, ...props }: any) => {
 
   const handleToDetail = (id: number) => {
-    props.history.push('/detail/' + id);
+    props.history.push(`${PATH_DETAIL}/${id}`);
   }
 
   const renderArticlesList = (item: articleItem, index: number) => {
