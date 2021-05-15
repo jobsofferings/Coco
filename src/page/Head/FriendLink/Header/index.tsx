@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { ReactComponent as QUOTES_DOWN } from 'src/assert/quotesDown.svg'
-import { ReactComponent as QUOTES_UP } from 'src/assert/quotesUp.svg'
 import { Input, Modal, message as AntdMessage } from 'antd'
 import { useMutation } from 'react-query';
 import { addMessage } from 'src/fetch';
 import './index.less'
+import CocoIcon from 'src/components/WhaleIcon';
 
 const { TextArea } = Input
 
@@ -53,13 +52,13 @@ const Header = ({ total, refetch }: HeaderProps) => {
       <div className="archive-header">
         <div className="archive-header-topic">
           <div>
-            <QUOTES_UP />
+            <CocoIcon type='icon-quotesDown' />
           </div>
           <div>
             <p>人的平均寿命77岁，一共28105天，67w小时，4047w分钟，24亿秒左右，这10秒你在读这段话，这10秒你属于我。</p>
           </div>
           <div>
-            <QUOTES_DOWN />
+            <CocoIcon type='icon-quotesUp' />
           </div>
         </div>
         <div className="archive-header-submit">

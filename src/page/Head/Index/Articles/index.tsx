@@ -1,12 +1,11 @@
 import React from 'react';
-import { ReactComponent as LOGO } from 'src/assert/logo.svg'
-import { ReactComponent as SEARCH } from 'src/assert/search.svg'
 import { Empty, Spin } from 'antd';
 import { withRouter } from 'react-router-dom';
 import { abstractFn, getMonthEng } from 'src/function/myFun';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { LoadingOutlined } from '@ant-design/icons';
 import { PATH_DETAIL } from 'src/router/config';
+import CocoIcon from 'src/components/WhaleIcon';
 import './index.less'
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
@@ -50,7 +49,7 @@ const Articles = ({ data, getMore, total = 0, ...props }: any) => {
         </div>
         <div className="articles-meta">
           <div className="articles-meta-left">
-            <div><LOGO /></div>
+            <div><CocoIcon type='icon-logo' /></div>
             <div>{item.author}</div>
             <div>{item.read} 次阅读</div>
             <div>{item.like} 人喜欢</div>
@@ -58,7 +57,7 @@ const Articles = ({ data, getMore, total = 0, ...props }: any) => {
           </div>
           <div className="articles-meta-right">
             <div>
-              <SEARCH />
+              <CocoIcon type='icon-search' />
               <p>{`${getMonthEng(timer.getMonth() + 1)} ${timer.getDate()}, ${timer.getFullYear()}`}</p>
             </div>
           </div>

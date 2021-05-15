@@ -1,10 +1,6 @@
 import React from 'react';
 import { Map, Marker } from 'react-amap';
-import { ReactComponent as ME } from 'src/assert/me.svg'
-import { ReactComponent as POSITION } from 'src/assert/position.svg'
-import { ReactComponent as TOOL } from 'src/assert/tool.svg'
-import { ReactComponent as COMPANY } from 'src/assert/company.svg'
-import { ReactComponent as LIKE } from 'src/assert/like.svg'
+import CocoIcon from 'src/components/WhaleIcon';
 import './index.less'
 
 function AboutContent() {
@@ -12,19 +8,19 @@ function AboutContent() {
   const AMAP_KEY = 'a77ae728df8f8c954d77c202ae0c0a94';
 
   const descriptionList = [{
-    componentSvg: <ME />,
+    componentSvg: <CocoIcon type='icon-me' />,
     description: '赶上了90末班车的99后的米卡，笔名Jobsofferings，前端，目前在杭州，喜欢自由的生活，未知的东西是自己的兴趣来源，最爱音乐。'
   }, {
-    componentSvg: <LIKE />,
+    componentSvg: <CocoIcon type='icon-like' />,
     description: '音乐，Coding，长跑，小说，犯傻'
   }, {
-    componentSvg: <TOOL />,
+    componentSvg: <CocoIcon type='icon-tool' />,
     description: 'React，Node，Vue，TypeScript'
   }, {
-    componentSvg: <POSITION />,
+    componentSvg: <CocoIcon type='icon-position' />,
     description: '杭州黄龙万科中心H座'
   }, {
-    componentSvg: <COMPANY />,
+    componentSvg: <CocoIcon type='icon-company' />,
     description: '杭州帷幄匠心'
   }];
 

@@ -13,7 +13,7 @@ function AboutHeader() {
           <p>Jobsofferings</p>
         </div>
         <div className="my-description">
-          <p>Coco developer, Li Yuke, Front-end engineer</p>
+          <p>Coco Developer, Hip Hop, Front End</p>
         </div>
       </div>
     </div>

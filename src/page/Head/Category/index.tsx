@@ -1,6 +1,6 @@
 import React from 'react';
-import { ReactComponent as CATEGORY } from 'src/assert/category.svg'
 import { Empty } from 'antd';
+import CocoIcon from 'src/components/WhaleIcon';
 import './index.less'
 
 function Category() {
@@ -10,7 +10,7 @@ function Category() {
   return (
     <div className="category">
       <div className="category-header">
-        <CATEGORY />
+        <CocoIcon type='icon-category' />
         <div className="category-title">组别标签</div>
       </div>
       <div className="category-content">

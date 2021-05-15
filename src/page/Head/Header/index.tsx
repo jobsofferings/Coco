@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { ReactComponent as LOGO } from 'src/assert/logo.svg'
-import { ReactComponent as SEARCH } from 'src/assert/search.svg'
-import { ReactComponent as CLOSE } from 'src/assert/close.svg'
 import { Link, withRouter } from 'react-router-dom';
+import CocoIcon from 'src/components/WhaleIcon';
 import { PATH_ABOUT, PATH_ARCHIVE, PATH_LINK, PATH_ROOT, PATH_SEARCH } from 'src/router/config';
 import './index.less'
 
@@ -70,13 +68,17 @@ const Header = (props: any) => {
     <div className="header">
       <div className="nav">
         <div className="logo">
-          <LOGO />
+          <CocoIcon type='icon-logo' />
         </div>
         <div className="list">
           {renderNav()}
         </div>
         <div className="search">
-          <CLOSE className={`search-close ${!inputValue.length ? 'hide' : ''}`} onClick={handleClearInput} />
+          <CocoIcon
+            type='icon-close'
+            className={`search-close ${!inputValue.length ? 'hide' : ''}`}
+            onClick={handleClearInput}
+          />
           <input
             type="text"
             value={inputValue}
@@ -85,7 +87,7 @@ const Header = (props: any) => {
             placeholder="搜索文章"
           />
           <div className="search-icon" onClick={() => handleSearch(inputValue)}>
-            <SEARCH className="icon" />
+            <CocoIcon type='icon-search' className="icon" />
           </div>
         </div>
       </div>

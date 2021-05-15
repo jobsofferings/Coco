@@ -1,11 +1,11 @@
 import React from 'react';
-import { ReactComponent as ARTICLE } from 'src/assert/article.svg'
 import { Empty, Spin } from 'antd';
 import { starArticles } from 'src/fetch';
 import useBaseQuery from 'src/hooks/useBaseQuery';
 import { articleItem } from '../Index/Articles';
 import { withRouter } from 'react-router';
 import { PATH_DETAIL } from 'src/router/config';
+import CocoIcon from 'src/components/WhaleIcon';
 import './index.less'
 
 const Menu = (props: any) => {
@@ -32,7 +32,7 @@ const Menu = (props: any) => {
   return (
     <div className="menu">
       <div className="menu-header">
-        <ARTICLE />
+        <CocoIcon type='icon-article' />
         <div className="menu-title">明星文章</div>
       </div>
       <div className="menu-content">

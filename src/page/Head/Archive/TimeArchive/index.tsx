@@ -1,5 +1,4 @@
 import React from 'react';
-import { ReactComponent as ARCHIVE } from 'src/assert/archive.svg'
 import { getArticle } from 'src/fetch';
 import useBaseQuery from 'src/hooks/useBaseQuery';
 import moment from 'moment';
@@ -8,9 +7,10 @@ import { Spin } from 'antd';
 import { withRouter } from 'react-router-dom';
 import { articleItem } from '../../Index/Articles';
 import { PATH_DETAIL } from 'src/router/config';
+import CocoIcon from 'src/components/WhaleIcon';
 import './index.less'
 
-const iconStyle = { width: 40, height: 40 };
+const iconStyle = { fontSize: 40 };
 
 const TimeArchive = (props: any) => {
 
@@ -77,7 +77,7 @@ const TimeArchive = (props: any) => {
 			<div className="time-archive" key="two">
 				<div className="time-archive-header">
 					<div>
-						<ARCHIVE style={iconStyle} />
+						<CocoIcon type='icon-archive' style={iconStyle} />
 						<p>归档</p>
 						<div>目前共计 <span>{total}</span> 篇文章</div>
 					</div>

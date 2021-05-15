@@ -6,7 +6,7 @@ import './BaseContent.less';
 const BaseContent: (fn: any) => () => JSX.Element = (fn: any) => {
   return () => <div className="head">
     <Header />
-    <div className="content">
+    <div className="base-content">
       {fn()}
     </div>
     <Footer />

@@ -134,15 +134,14 @@
         right: 8px + 36px;
         top: 50%;
         transform: translateY(-50%);
-        fill: #ddd;
-        width: @closeSize;
-        height: @closeSize;
-        transition: fill 0.4s ease;
-        fill: #bfbfbf;
+        color: #ddd;
+        font-size: @closeSize;
+        transition: color 0.4s ease;
+        color: #bfbfbf;
         cursor: pointer;
       }
       .search-close:hover {
-        fill: #8c8c8c;
+        color: #8c8c8c;
       }
       .search-close:hover + input {
         border-color: #40a9ff;
@@ -162,9 +161,8 @@
         transition: 0.4s all ease;
       }
       .icon {
-        width: 20px;
-        height: 20px;
-        fill: #fff;
+        font-size: 20px;
+        color: #fff;
       }
     }
   }
