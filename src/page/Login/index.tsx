@@ -8,13 +8,13 @@ import { login, sign } from 'src/fetch'
 import './index.less'
 
 interface LoginProps {
-  email: string
+  username: string
   password: string
 }
 
 interface SignProps {
+  nickname: string
   username: string
-  email: string
   password: string
 }
 
@@ -30,12 +30,12 @@ export const Authority = {
 }
 
 const defaultLogin: LoginProps = {
-  email: '',
+  username: '',
   password: '',
 }
 
 const defaultSign: SignProps = {
-  email: '',
+  nickname: '',
   password: '',
   username: '',
 }
@@ -52,13 +52,13 @@ const Login = (props: any) => {
     () => login(loginParams),
     {
       onSuccess: ({ data }) => {
-        const { flag, user, msg } = data
+        const { flag, msg } = data
         if (!flag) {
           message.error(msg)
           setLoginParams(defaultLogin)
         } else {
-          message.success(`用户：${user.username} 登录成功`)
-          afterSuccess(user)
+          message.success('登录成功')
+          afterSuccess()
         }
       },
     },
@@ -69,25 +69,20 @@ const Login = (props: any) => {
     () => sign(signParams),
     {
       onSuccess: ({ data }) => {
-        const { flag, user, msg } = data
+        const { flag, msg } = data
         if (!flag) {
           message.error(msg)
           setSignParams(defaultSign)
         } else {
-          message.success(`用户：${user.username} 注册成功`)
-          afterSuccess(user)
+          message.success('注册成功')
+          afterSuccess()
         }
       },
     },
   )
 
-  const afterSuccess = (user: User) => {
-    saveStorage(user)
+  const afterSuccess = () => {
     props.history.push(PATH_ROOT)
-  }
-
-  const saveStorage = (user: User) => {
-    sessionStorage.setItem('user', JSON.stringify(user))
   }
 
   const handleSlideSign = () => {
@@ -144,11 +139,11 @@ const Login = (props: any) => {
               onChange={handleChangeSignParams}
             />
             <input
-              type="email"
-              name="email"
+              type="nickname"
+              name="nickname"
               className="input"
-              placeholder="邮箱"
-              value={signParams.email}
+              placeholder="昵称"
+              value={signParams.nickname}
               onChange={handleChangeSignParams}
             />
             <input
@@ -172,10 +167,10 @@ const Login = (props: any) => {
             </h2>
             <div className="form-holder">
               <input
-                type="email"
-                name="email"
-                placeholder="邮箱"
-                value={loginParams.email}
+                type="username"
+                name="username"
+                placeholder="用户名"
+                value={loginParams.username}
                 onChange={handleChangeLoginParams}
               />
               <input
