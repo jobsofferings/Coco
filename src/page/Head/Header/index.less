@@ -1,6 +1,6 @@
 @navHeight: 60px;
 @closeSize: 12px;
-@inputWidth: 200px;
+@inputWidth: 150px;
 @radius: 2px;
 @allOpacity: 0.9;
 @allWidth: 1100px;
@@ -70,13 +70,14 @@
     .search {
       position: relative;
       float: right;
+      margin-right: 30px;
       height: @navHeight;
       input {
         box-sizing: border-box;
         float: left;
         width: @inputWidth;
-        height: 36px;
-        margin: 12px 0;
+        height: 30px;
+        margin: 15px 0;
         padding: 0 16px 0 8px;
         border: none;
         border: 1px solid #ccc;
@@ -89,33 +90,31 @@
         box-shadow: 0 0 0 2px rgba(24, 144, 255, 0);
         -webkit-user-select: none;
         user-select: none;
+        font-size: 0.8rem;
         z-index: 1;
       }
 
       input::-webkit-input-placeholder {
         padding-left: 4px;
-        line-height: @navHeight;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
       input::-moz-placeholder {
         padding-left: 4px;
-        line-height: @navHeight;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
       input:-ms-input-placeholder {
         padding-left: 4px;
-        line-height: @navHeight;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
       input:hover {
-        border-color: #40a9ff;
+        border-color: #fb7268;
       }
 
       input:focus {
-        border-color: #40a9ff;
+        border-color: #fb7268;
         box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
       }
 
@@ -131,7 +130,7 @@
 
       .search-close {
         position: absolute;
-        right: 8px + 36px;
+        right: 8px + 30px;
         top: 50%;
         transform: translateY(-50%);
         color: #ddd;
@@ -144,7 +143,7 @@
         color: #8c8c8c;
       }
       .search-close:hover + input {
-        border-color: #40a9ff;
+        border-color: #fb7268;
       }
       .search-icon {
         box-sizing: border-box;
@@ -152,12 +151,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 36px;
-        height: 36px;
-        margin: 12px 0;
+        width: 30px;
+        height: 30px;
+        margin: 15px 0;
         border-bottom-right-radius: @radius;
         border-top-right-radius: @radius;
-        background-color: #40a9ff;
+        background-color: #fb7268;
         transition: 0.4s all ease;
       }
       .icon {
@@ -165,5 +164,73 @@
         color: #fff;
       }
     }
+  }
+}
+
+.login {
+  float: right;
+  text-align: center;
+  font-weight: bold;
+  line-height: (@navHeight / 2);
+  > div {
+    margin-right: 30px;
+  }
+  .button {
+    display: inline-block;
+    padding: 0em 2em;
+    height: (@navHeight / 2);
+    margin: (@navHeight / 4) 0;
+    background-color: #fb7268;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(251, 114, 104, 0.5);
+    outline: 0;
+    transition: transform ease-in 0.1s, background-color ease-in 0.1s,
+      box-shadow ease-in 0.25s;
+  }
+
+  .button::before {
+    position: absolute;
+    content: '';
+    left: -2em;
+    right: -2em;
+    top: -2em;
+    bottom: -2em;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      /*  */ radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%),
+      radial-gradient(circle, #fb7268 20%, transparent 20%);
+    background-position: 5% 44%, -5% 20%, 7% 5%, 23% 0%, 37% 0, 58% -2%, 80% 0%,
+      100% -2%, -5% 80%, 100% 55%, 2% 100%, 23% 100%, 42% 100%, 60% 95%, 70% 96%,
+      100% 100%;
+    background-size: 0% 0%;
+    transition: background-position 0.2s ease-in-out,
+      background-size 0.3s ease-in-out;
+  }
+  .button:active::before {
+    transition: 0s;
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%,
+      15% 15%, 10% 10%, 18% 18%, 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%,
+      10% 10%, 20% 20%;
+    background-position: 18% 40%, 20% 31%, 30% 30%, 40% 30%, 50% 30%, 57% 30%,
+      65% 30%, 80% 32%, 15% 60%, 83% 60%, 18% 70%, 25% 70%, 41% 70%, 50% 70%,
+      64% 70%, 80% 71%;
   }
 }

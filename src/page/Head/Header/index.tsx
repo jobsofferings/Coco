@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Search from 'src/page/Head/Header/Search';
 import CocoIcon from 'src/components/WhaleIcon';
-import { PATH_ABOUT, PATH_ARCHIVE, PATH_LINK, PATH_ROOT, PATH_SEARCH } from 'src/router/config';
+import { PATH_ABOUT, PATH_ARCHIVE, PATH_LINK, PATH_LOGIN, PATH_ROOT } from 'src/router/config';
+import { message, Row } from 'antd';
+import { clearAllCookie, getCookie } from 'src/function/myFun';
 import './index.less'
 
 const navList = [{
@@ -21,24 +24,10 @@ const navList = [{
 const Header = (props: any) => {
 
   const [navIndex, setNavIndex] = useState(0);
-  const [inputValue, setInputValue] = useState('');
+  const [nickname, setNickname] = useState(decodeURI(getCookie('nickname')));
+  const [username, setUsername] = useState(getCookie('username'));
 
   const pathname = props.history.location.pathname;
-
-  const handelChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => setInputValue(value)
-
-  const handleClearInput = () => {
-    setInputValue('');
-  }
-
-  const handleSearch = (val: string) => {
-    props.history.push(`${PATH_SEARCH}/${val}`)
-    setInputValue('')
-  }
-
-  const handlePress = ({ charCode }: React.KeyboardEvent) => {
-    charCode === 13 && handleSearch(inputValue)
-  }
 
   const handleChangerouter = (navIndex: number) => setNavIndex(navIndex)
 
@@ -64,6 +53,26 @@ const Header = (props: any) => {
     })
   }, [])
 
+  const handleToLogin = () => {
+    setTimeout(() => {
+      props.history.push(PATH_LOGIN)
+    }, 300)
+  }
+
+  const handleToLogout = () => {
+    message.success(`用户：${nickname} 注销成功`)
+    setTimeout(() => {
+      clearAll()
+      props.history.push(PATH_ROOT)
+    }, 300)
+  }
+
+  const clearAll = () => {
+    clearAllCookie()
+    setUsername('')
+    setNickname('')
+  }
+
   return (
     <div className="header">
       <div className="nav">
@@ -73,23 +82,22 @@ const Header = (props: any) => {
         <div className="list">
           {renderNav()}
         </div>
-        <div className="search">
-          <CocoIcon
-            type='icon-close'
-            className={`search-close ${!inputValue.length ? 'hide' : ''}`}
-            onClick={handleClearInput}
-          />
-          <input
-            type="text"
-            value={inputValue}
-            onKeyPress={handlePress}
-            onChange={handelChange}
-            placeholder="搜索文章"
-          />
-          <div className="search-icon" onClick={() => handleSearch(inputValue)}>
-            <CocoIcon type='icon-search' className="icon" />
+        {!username && (
+          <div className="login">
+            <button onClick={handleToLogin} className="button">
+              登录
+            </button>
           </div>
-        </div>
+        )}
+        {username && (
+          <Row className="login" align="middle">
+            <div>欢迎你，{nickname}</div>
+            <button onClick={handleToLogout} className="button">
+              注销
+            </button>
+          </Row>
+        )}
+        <Search />
       </div>
     </div>
   );
