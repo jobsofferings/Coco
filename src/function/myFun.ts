@@ -34,13 +34,3 @@ export const abstractFn = (res: string) => {
 export const formatDateToString = (date: Date) => `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
 
 export const handleSubmit = () => message.info('当前功能未开发')
-
-export const getCookie = (name: string) => {
-  const strcookie = document.cookie
-  const arrcookie = strcookie.split("; ")
-  for (let i = 0; i < arrcookie.length; i++) {
-    const arr = arrcookie[i].split("=")
-    if (arr[0] == name) return arr[1]
-  }
-  return "";
-}

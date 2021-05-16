@@ -1,5 +1,4 @@
 import axios from "axios";
-import { getCookie } from "./myFun";
 
 axios.defaults.baseURL = 'http://www.jobsofferings.cn:5000'
 
@@ -13,17 +12,20 @@ if (env === 'development') {
 
 axios.defaults.withCredentials = true;
 
-axios.interceptors.request.use(
-  config => {
-    const TOKEN = 'token'
-    if(!config.headers[TOKEN]){
-      config.headers[TOKEN] = getCookie(TOKEN);
-    }
-    return config;
-  }, function (error) {
-    return Promise.reject(error);
-  }
-);
+// 后续补充response拦截器拦截错误，错误统一处理
+
+// 原拦截器为捆绑token进request，后直接后端取cookie
+// axios.interceptors.request.use(
+//   config => {
+//     const TOKEN = 'token'
+//     if(!config.headers[TOKEN]){
+//       config.headers[TOKEN] = getCookie(TOKEN);
+//     }
+//     return config;
+//   }, function (error) {
+//     return Promise.reject(error);
+//   }
+// );
 
 export const axiosGet = (url: string, data: any) => {
   return new Promise((resolve, reject) => {
