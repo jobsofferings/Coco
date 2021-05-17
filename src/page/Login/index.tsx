@@ -96,11 +96,46 @@ const Login = (props: any) => {
   }
 
   const handleLogin = () => {
-    loginFetch()
+    if (checkLogin()) {
+      loginFetch()
+    }
   }
 
   const handleSign = () => {
-    signFetch()
+    if (checkSign()) {
+      signFetch()
+    }
+  }
+
+  const checkLogin = () => {
+    const { username, password } = loginParams
+    return checkUserName(username) && checkPassword(password)
+  }
+
+  const checkSign = () => {
+    const { username, password, nickname } = signParams
+    return checkUserName(username) && checkPassword(password) && checkNickname(nickname)
+  }
+
+  const checkUserName = (str: string) => {
+    var p = /^\d\d{10}$/;
+    const res = p.test(str);
+    if(!res) message.error('用户名为11位数字')
+    return res;
+  }
+
+  const checkPassword = (str: string) => {
+    var p = /^[A-Za-z]{1}[A-Za-z0-9_-]{7,15}$/;
+    const res = p.test(str);
+    if(!res) message.error('密码以字母开头，只能包含字母数字下划线和减号，8到16位字符')
+    return p.test(str);
+  }
+
+  const checkNickname = (str: string) => {
+    var p = /^[\u4e00-\u9fa5A-Za-z0-9-_]*$/;
+    const res = p.test(str);
+    if(!res) message.error('不合法昵称!')
+    return p.test(str);
   }
 
   const handleChangeSignParams: React.ChangeEventHandler<HTMLInputElement> = ({
@@ -131,19 +166,19 @@ const Login = (props: any) => {
           </h2>
           <div className="form-holder">
             <input
-              type="text"
-              name="username"
-              className="input"
-              placeholder="用户名"
-              value={signParams.username}
-              onChange={handleChangeSignParams}
-            />
-            <input
               type="nickname"
               name="nickname"
               className="input"
               placeholder="昵称"
               value={signParams.nickname}
+              onChange={handleChangeSignParams}
+            />
+            <input
+              type="text"
+              name="username"
+              className="input"
+              placeholder="用户名"
+              value={signParams.username}
               onChange={handleChangeSignParams}
             />
             <input
