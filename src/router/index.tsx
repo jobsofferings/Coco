@@ -26,5 +26,4 @@ const BasicRoute = () => (
   </Router>
 );
 
-
 export default BasicRoute;
