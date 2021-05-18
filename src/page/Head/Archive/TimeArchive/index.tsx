@@ -79,7 +79,7 @@ const TimeArchive = (props: any) => {
 					<div>
 						<CocoIcon type='icon-archive' style={iconStyle} />
 						<p>归档</p>
-						<div>目前共计 <span>{total}</span> 篇文章</div>
+						<div>目前共计 <span>{total || 0}</span> 篇文章</div>
 					</div>
 				</div>
 				<div className="time-archive-content">

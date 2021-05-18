@@ -6,7 +6,7 @@ interface ChangeCarousel {
 	isNext: boolean
 }
 
-const carouselList = ['以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中', '以前的博客已下线，此博客迭代中']
+const carouselList = ['欢迎枫殇NET开发加入友链', '欢迎柠萌博客加入友链']
 
 function Carousel() {
 	const [trans, setTrans] = React.useState(0);
