@@ -14,6 +14,7 @@ export interface articleItem {
   title: string,
   headImgSrc: string,
   summary: string,
+  briefContent: string,
   author: string,
   like: number,
   read: number,
@@ -44,7 +45,7 @@ const Articles = ({ data, getMore, total = 0, ...props }: any) => {
             <img src={item.headImgSrc} onClick={toDetail} alt={item.title} title={item.title} />
           </div>}
           <div className="articles-content-summary-area">
-            <p onClick={toDetail}>{abstractFn(item.summary)}</p>
+            <p onClick={toDetail}>{abstractFn(item.briefContent)}</p>
           </div>
         </div>
         <div className="articles-meta">

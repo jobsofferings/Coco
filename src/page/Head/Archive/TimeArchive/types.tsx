@@ -36,6 +36,7 @@ export interface articleItem {
   title: string,
   headImgSrc: string,
   summary: string,
+  briefContent: string,
   author: string,
   like: number,
   read: number,
