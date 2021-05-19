@@ -11,7 +11,6 @@ import Login from 'src/page/Login';
 
 const history = createBrowserHistory();
 
-
 const BasicRoute = () => (
   <Router history={history}>
     <Switch>

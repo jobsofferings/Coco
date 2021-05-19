@@ -1,6 +1,6 @@
 {
   "name": "coco",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "keywords": [
     "TypeScript",
@@ -56,7 +56,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged 1"
+      "pre-commit": "lint-staged"
     }
   },
   "browserslist": {
@@ -77,11 +77,11 @@
     "@types/react-addons-transition-group": "^15.0.4",
     "@types/react-router-dom": "^5.1.5",
     "antd": "^4.2.2",
+    "husky": "^5.2.0",
     "less": "^4.1.1",
     "less-loader": "^5.0.0",
-    "husky": "^5.1.1",
     "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "react-router-dom": "^5.2.0"
   }
 }
