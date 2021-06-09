@@ -1,4 +1,5 @@
 import axios from "axios";
+import { message } from 'antd'
 
 axios.defaults.baseURL = 'http://www.jobsofferings.cn:5000'
 
@@ -26,6 +27,19 @@ axios.defaults.withCredentials = true;
 //     return Promise.reject(error);
 //   }
 // );
+axios.interceptors.response.use(
+  response => {
+    const code = response?.data?.code
+    switch (code) {
+      case 10001:
+        message.error('请登录后使用')
+        break;
+      default:
+        break;
+    }
+    return response;
+  },
+)
 
 export const axiosGet = (url: string, data: any) => {
   return new Promise((resolve, reject) => {

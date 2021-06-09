@@ -61,10 +61,10 @@ const TimeArchive = (props: any) => {
 		return data.map((item, index) => {
 			const time = moment(parseInt(item.timer));
 			return (
-				<div onClick={() => handleToDetails(item.id)} className='day-content' key={index}>
+				<div className='day-content' key={index}>
 					<p>{formatTimeNum(time.month())}-{formatTimeNum(time.date())}</p>
 					<span>{item.author}</span>
-					<p>{item.title}</p>
+					<p onClick={() => handleToDetails(item.id)}>{item.title}</p>
 				</div>
 			)
 		})

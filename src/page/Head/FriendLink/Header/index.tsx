@@ -27,8 +27,6 @@ const Header = ({ total, refetch }: HeaderProps) => {
           AntdMessage.success(message)
           refetch && refetch()
           handleHideModal()
-        } else {
-          AntdMessage.error(message)
         }
       },
     },
